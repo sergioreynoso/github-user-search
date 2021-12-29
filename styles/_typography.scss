@@ -1,0 +1,52 @@
+:root {
+  /* font-sizes */
+  --fs-700: 1.625rem;
+  --fs-600: 1.375rem;
+  --fs-500: 1rem;
+  --fs-400: 0.9375rem;
+  --fs-300: 0.8125rem;
+
+  /*line-height*/
+  --lh-700: 2.375rem;
+  --lh-600: 2.0625rem;
+  --lh-500: 1.5rem;
+  --lh-400: 1.5625rem;
+  --lh-300: 1.25rem;
+
+  /* font-families */
+  --ff-sans-reg: "Space Mono", monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: Bold;
+}
+
+h1 {
+  font-size: var(--fs-700);
+  line-height: var(--lh-700);
+}
+
+h2 {
+  font-size: var(--lh-600);
+  line-height: var(--lh-600);
+}
+
+h3 {
+  font-size: var(--lh-500);
+  line-height: var(--lh-500);
+}
+
+h4 {
+  font-size: var(--fs-300);
+  line-height: var(--lh-300);
+}
+
+p {
+  font-size: var(--fs-400);
+  line-height: var(--lh-400);
+}

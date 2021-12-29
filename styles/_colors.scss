@@ -1,0 +1,73 @@
+:root {
+  /* colors */
+  --clr-blue-500: 212 100% 50%;
+  --clr-white-50: 0 0% 100%;
+  --clr-slate-100: 227 100% 98%;
+  --clr-slate-300: 217 20% 51%;
+  --clr-slate-400: 217 35% 45%;
+  --clr-slate-450: 227 46% 51%;
+  --clr-slate-500: 217 21% 21%;
+  --clr-slate-600: 222 41% 20%;
+  --clr-slate-800: 220 40% 13%;
+  --clr-red-400: 0 91% 62%;
+
+  --clr-accent: hsl(var(--clr-blue-500));
+  --clr-error: hsl(var(--clr-red-400));
+
+  /* Background Color */
+  --clr-bg: hsl(var(--clr-slate-100));
+
+  /* Header */
+  --clr-header-text: hsl(var(--clr-slate-800));
+  --clr-dark-mode-toggle: hsl(var(--clr-slate-400));
+  --clr-dark-mode-toggle-hover: hsl(var(--clr-slate-800));
+
+  /* Search Bar */
+  --clr-search-bar-bg: hsl(var(--clr-white-50));
+  --clr-search-bar-shadow: hsl(var(--clr-slate-450) / 0.2);
+  --clr-search-bar-text: hsl(var(--clr-slate-400));
+
+  /* User Details */
+  --clr-user-detail-bg: hsl(var(--clr-white-50));
+  --clr-user-detail-name: hsl(var(--clr-slate-800));
+  --clr-user-detail-name-link: hsl(var(--clr-accent));
+  --clr-user-detail-joined-date-text: hsl(var(--clr-slate-300));
+  --clr-user-detail-bio-text: hsl(var(--clr-slate-400));
+  --clr-user-detail-stats-bg: hsl(var(--clr-slate-100));
+  --clr-user-detail-stat-title-text: hsl(var(--clr-slate-400));
+  --clr-user-detail-stat-text: hsl(var(--clr-slate-800));
+
+  /* Links */
+  --clr-user-detail-footer-link: hsl(var(--clr-slate-400));
+  --clr-user-detail-footer-link-disabled: hsl(var(--clr-slate-400) / 0.5);
+}
+
+/* ------- Dark mode ------- */
+.dark-mode {
+  /* Background Color */
+  --clr-bg: hsl(var(--clr-slate-800));
+
+  /* Header */
+  --clr-header-text: hsl(var(--clr-white-50));
+  --clr-dark-mode-toggle: hsl(var(--clr-white-50));
+  --clr-dark-mode-toggle-hover: hsl(var(--clr-slate-400));
+
+  /* Search Bar */
+  --clr-search-bar-bg: hsl(var(--clr-slate-600));
+  --clr-search-bar-shadow: hsl(var(--clr-slate-450) / 0);
+  --clr-search-bar-text: hsl(var(--clr-white-50));
+
+  /* User Details */
+  --clr-user-detail-bg: hsl(var(--clr-slate-600));
+  --clr-user-detail-name: hsl(var(--clr-white-50));
+  --clr-user-detail-name-link: hsl(var(--clr-accent));
+  --clr-user-detail-joined-date-text: hsl(var(--clr-white-50));
+  --clr-user-detail-bio-text: hsl(var(--clr-white-50));
+  --clr-user-detail-stats-bg: hsl(var(--clr-white-50));
+  --clr-user-detail-stat-title-text: hsl(var(--clr-white-50));
+  --clr-user-detail-stat-text: hsl(var(--clr-white-50));
+
+  /* Links */
+  --clr-user-detail-footer-link: hsl(var(--clr-white-50));
+  --clr-user-detail-footer-link-disabled: hsl(var(--clr-white-50) / 0.5);
+}
