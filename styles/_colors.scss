@@ -16,6 +16,8 @@
 
   /* Background Color */
   --clr-bg: hsl(var(--clr-slate-100));
+  --clr-card-bg: hsl(var(--clr-white-50));
+  --clr-card--shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
 
   /* Header */
   --clr-header-text: hsl(var(--clr-slate-800));
@@ -24,11 +26,9 @@
 
   /* Search Bar */
   --clr-search-bar-bg: hsl(var(--clr-white-50));
-  --clr-search-bar-shadow: hsl(var(--clr-slate-450) / 0.2);
   --clr-search-bar-text: hsl(var(--clr-slate-400));
 
   /* User Details */
-  --clr-user-detail-bg: hsl(var(--clr-white-50));
   --clr-user-detail-name: hsl(var(--clr-slate-800));
   --clr-user-detail-name-link: hsl(var(--clr-accent));
   --clr-user-detail-joined-date-text: hsl(var(--clr-slate-300));
@@ -46,6 +46,8 @@
 .dark-mode {
   /* Background Color */
   --clr-bg: hsl(var(--clr-slate-800));
+  --clr-card-bg: hsl(var(--clr-slate-600));
+  --clr-card--shadow: none;
 
   /* Header */
   --clr-header-text: hsl(var(--clr-white-50));
@@ -54,11 +56,9 @@
 
   /* Search Bar */
   --clr-search-bar-bg: hsl(var(--clr-slate-600));
-  --clr-search-bar-shadow: hsl(var(--clr-slate-450) / 0);
   --clr-search-bar-text: hsl(var(--clr-white-50));
 
   /* User Details */
-  --clr-user-detail-bg: hsl(var(--clr-slate-600));
   --clr-user-detail-name: hsl(var(--clr-white-50));
   --clr-user-detail-name-link: hsl(var(--clr-accent));
   --clr-user-detail-joined-date-text: hsl(var(--clr-white-50));

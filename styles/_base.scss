@@ -32,6 +32,7 @@ body {
 body {
   font-family: var(--ff-sans-reg);
   line-height: var(--lh-500);
+
   color: var(--clr-body);
   background-color: var(--clr-bg);
   -webkit-font-smoothing: antialiased;
@@ -85,4 +86,16 @@ h6 {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.container {
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+main {
+  margin-top: clamp(1.9375rem, 15vw, 9rem);
+  margin-inline: auto;
+  min-width: 20.4375rem;
+  max-width: 42.625rem;
 }
