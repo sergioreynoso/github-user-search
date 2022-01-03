@@ -1,3 +1,5 @@
+@use "./variables" as vars;
+
 :root {
   /* font-sizes */
   --fs-700: 1.625rem;
@@ -7,6 +9,7 @@
   --fs-400: 0.9375rem;
   --fs-350: 0.875rem;
   --fs-300: 0.8125rem;
+  --fs-200: 0.6875rem;
 
   /*line-height*/
   --lh-700: 2.375rem;
@@ -34,12 +37,17 @@ h1 {
 }
 
 h2 {
-  font-size: var(--lh-600);
-  line-height: var(--lh-600);
+  font-size: var(--fs-500);
+  line-height: var(--lh-500);
+
+  @media (min-width: vars.$bp-tablet) {
+    font-size: var(--fs-700);
+    line-height: var(--lh-700);
+  }
 }
 
 h3 {
-  font-size: var(--lh-500);
+  font-size: var(--fs-500);
   line-height: var(--lh-500);
 }
 
@@ -49,6 +57,22 @@ h4 {
 }
 
 p {
-  font-size: var(--fs-400);
+  font-size: var(--fs-300);
   line-height: var(--lh-400);
+
+  @media (min-width: vars.$bp-tablet) {
+    font-size: var(--fs-400);
+    line-height: var(--lh-400);
+  }
+}
+
+body {
+  font-family: var(--ff-sans-reg);
+  font-size: var(--fs-300);
+  line-height: var(--lh-400);
+
+  @media (min-width: vars.$bp-tablet) {
+    font-size: var(--fs-400);
+    line-height: var(--lh-400);
+  }
 }

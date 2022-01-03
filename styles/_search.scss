@@ -1,3 +1,5 @@
+@use "./variables" as vars;
+
 .search-bar {
   display: flex;
   justify-content: space-between;
@@ -7,7 +9,7 @@
   padding: 0.59375rem 0.625rem 0.59375rem 1rem;
   margin-bottom: 1rem;
 
-  @media (min-width: 28.75em) {
+  @media (min-width: vars.$bp-tablet) {
     padding: 0.59375rem 0.625rem 0.59375rem 2rem;
   }
 
@@ -20,7 +22,7 @@
     margin-inline: 0.4375rem;
     flex-grow: 1;
 
-    color: var(--clr-search-bar-text);
+    color: var(--clr-text-body);
     background-color: transparent;
   }
 }
