@@ -1,5 +1,6 @@
-/* Buttons */
+@use "./variables" as vars;
 
+/* Buttons */
 .button {
   border: none;
   cursor: pointer;
@@ -42,7 +43,7 @@
   border-radius: 0.625rem;
   font-size: var(--fs-350);
 
-  @media (min-width: 28.75em) {
+  @media (min-width: vars.$bp-tablet) {
     padding: 0.78125rem 1.5rem;
     font-size: var(--fs-500);
   }
@@ -57,7 +58,7 @@ input {
   caret-color: var(--clr-accent);
   outline: none;
 
-  @media (min-width: 28.75em) {
+  @media (min-width: vars.$bp-tablet) {
     font-size: var(--fs-550);
     line-height: var(--lh-500);
   }

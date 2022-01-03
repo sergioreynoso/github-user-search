@@ -1,6 +1,7 @@
 @use "./colors";
 @use "./typography";
 @use "./utilities";
+@use "./variables" as vars;
 
 /*
   1. Use a more-intuitive box-sizing model.
@@ -15,6 +16,7 @@
 */
 * {
   margin: 0;
+  padding: 0;
 }
 /*
   3. Allow percentage-based heights in the application
@@ -30,10 +32,7 @@ body {
   5. Improve text rendering
 */
 body {
-  font-family: var(--ff-sans-reg);
-  line-height: var(--lh-500);
-
-  color: var(--clr-body);
+  color: var(--clr-text-body);
   background-color: var(--clr-bg);
   -webkit-font-smoothing: antialiased;
 }
@@ -88,9 +87,25 @@ h6 {
   }
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .container {
   width: 100%;
-  padding: 0 1.5rem;
+  padding-inline: 1.5rem;
+
+  @media (min-width: vars.$bp-tablet) {
+    padding-inline: 6.125rem;
+  }
 }
 
 main {
