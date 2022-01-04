@@ -1,5 +1,3 @@
-import "./styles/styles.scss";
-
 const body = document.querySelector("body");
 const darkModeToggle = document.querySelector(".dark-mode-toggle");
 const toggleItem = document.querySelectorAll(".dark-mode-toggle__item");

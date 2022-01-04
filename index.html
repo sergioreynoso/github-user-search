@@ -17,9 +17,10 @@
       <main>
         <header class="header">
           <h1>devfinder</h1>
-          <button class="dark-mode-toggle button">
+          <button class="dark-mode-toggle button" aria-label="dark mode toggle">
             <span class="dark-mode-toggle__item toggle-dark"
               >Dark<svg
+                aria-hidden="true"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
@@ -32,6 +33,7 @@
             </span>
             <span class="dark-mode-toggle__item toggle-light hide"
               >Light<svg
+                aria-hidden="true"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
@@ -48,6 +50,7 @@
         </header>
         <form action="submit" class="search-bar card-bg">
           <svg
+            aria-hidden="true"
             width="25"
             height="24"
             viewBox="0 0 25 24"
@@ -93,8 +96,9 @@
             <li class="user-detail__stat">Following<span>9</span></li>
           </ul>
           <ul class="user-detail__links">
-            <li class="user-detail__link">
+            <li class="user-detail__link user-detail__link-location">
               <svg
+                aria-hidden="true"
                 class="user-detail__icon"
                 height="20"
                 width="14"
@@ -106,8 +110,9 @@
               </svg>
               <span> San Francisco </span>
             </li>
-            <li class="user-detail__link">
+            <li class="user-detail__link user-detail__link-twitter">
               <svg
+                aria-hidden="true"
                 class="user-detail__icon"
                 height="18"
                 width="20"
@@ -119,8 +124,9 @@
               </svg>
               <span> <a href="#">Twitter</a></span>
             </li>
-            <li class="user-detail__link">
+            <li class="user-detail__link user-detail__link-website">
               <svg
+                aria-hidden="true"
                 class="user-detail__icon"
                 height="20"
                 width="20"
@@ -139,8 +145,9 @@
                 <a href="https://github.blog">https://github.blog</a>
               </span>
             </li>
-            <li class="user-detail__link">
+            <li class="user-detail__link user-detail__link-company">
               <svg
+                aria-hidden="true"
                 class="user-detail__icon"
                 height="20"
                 width="20"
@@ -160,6 +167,6 @@
         </section>
       </main>
     </div>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>
