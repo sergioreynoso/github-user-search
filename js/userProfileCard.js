@@ -31,7 +31,7 @@ export function renderProfile(userData) {
     company,
   } = userData;
 
-  console.log(userData);
+  // console.log(userData);
 
   resetFooterItem();
 
@@ -110,7 +110,7 @@ const renderTwitter = data => {
     footerLinksEmptyState(twitter);
     return;
   }
-  twitter.lastElementChild.innerHTML = `<a rel="nofollow me" href="https://twitter.com/${data}">${data}</a>`;
+  twitter.lastElementChild.innerHTML = `<a rel="noopener noreferrer nofollow" target="_blank"  href="https://twitter.com/${data}">${data}</a>`;
 };
 
 const renderBlog = data => {
@@ -118,7 +118,7 @@ const renderBlog = data => {
     footerLinksEmptyState(blog);
     return;
   }
-  blog.lastElementChild.innerHTML = `<a rel="nofollow me" href="https://${data}">${data}</a>`;
+  blog.lastElementChild.innerHTML = `<a rel="noopener noreferrer nofollow" target="_blank"  href="https://${data}">${data}</a>`;
 };
 
 const renderCompany = data => {
@@ -126,5 +126,5 @@ const renderCompany = data => {
     footerLinksEmptyState(company);
     return;
   }
-  company.lastElementChild.innerHTML = `<a rel="nofollow me" href="https://${data}">${data}</a>`;
+  company.lastElementChild.innerHTML = `<a rel="noopener noreferrer nofollow" target="_blank" href="https://${data}">${data}</a>`;
 };

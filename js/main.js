@@ -15,7 +15,7 @@ async function renderData(username) {
   }
 }
 
-// Initial profile
+// Initial default profile
 renderData("octocat");
 
 //Pass renderData to search form submit event handler

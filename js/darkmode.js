@@ -1,10 +1,25 @@
 const body = document.querySelector("body");
-const darkModeToggle = document.querySelector(".dark-mode-toggle");
+const darkModeToggleBtn = document.querySelector(".dark-mode-toggle");
 const toggleItem = document.querySelectorAll(".dark-mode-toggle__item");
+const colorTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-darkModeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
+const switchDarkModeToggleBtn = () => {
   toggleItem.forEach(item => {
     item.classList.toggle("hide");
   });
+};
+
+colorTheme.addEventListener("change", e => {
+  console.log(e);
+  const { matches } = e;
+  matches
+    ? body.classList.add("dark-mode")
+    : body.classList.remove("dark-mode");
+
+  switchDarkModeToggleBtn();
+});
+
+darkModeToggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  switchDarkModeToggleBtn();
 });
