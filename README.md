@@ -29,8 +29,8 @@ Users should be able to:
 <!-- ![Mobile](assets/screenshots/mobile.jpeg) -->
 
 ![Desktop](./assets/desktop.png)
-<img src="./assets/mobile.jpeg" width="768" />
-<img src="./assets/mobile.jpeg" width="375" />
+<img src="./assets/tablet.png" width="768" />
+<img src="./assets/mobile.png" width="375" />
 
 ### Links
 
