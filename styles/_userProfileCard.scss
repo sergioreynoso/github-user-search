@@ -125,7 +125,7 @@
     }
   }
 
-  &__links {
+  &__footer-links {
     grid-column: 1 / -1;
     padding: 1.5rem 0 3rem;
 
@@ -144,7 +144,7 @@
     }
   }
 
-  &__link {
+  &__footer-link {
     display: flex;
     justify-content: flex-start;
     align-items: center;

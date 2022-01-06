@@ -1,6 +1,6 @@
 @use "./variables" as vars;
 
-.search-bar {
+.search-form {
   display: flex;
   justify-content: space-between;
   place-items: center;
@@ -21,12 +21,12 @@
   &__input {
     margin-inline: 0.4375rem;
     flex-grow: 1;
-
-    color: var(--clr-text-body);
-    background-color: transparent;
-
     @media (min-width: vars.$bp-tablet) {
       margin-inline: 1.5rem;
     }
+  }
+
+  &__button {
+    flex: 0 0 auto;
   }
 }

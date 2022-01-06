@@ -1,6 +1,7 @@
 import "../styles/styles.scss";
 import { getUserData } from "./api";
 import * as userProfile from "./userProfileCard";
+import * as searchBar from "./searchBar";
 import "./darkmode";
 
 async function renderData(username) {
@@ -8,9 +9,14 @@ async function renderData(username) {
     const userData = await getUserData(username);
     userProfile.renderProfile(userData);
   } catch (error) {
-    console.error(`${error.message} 💥`);
+    // console.error(`${error.message} 💥`);
+    //Toggle error message when search input cannot be found
+    searchBar.toggleErrorMsg(true);
   }
 }
 
-// renderData("octocat");
-renderData("sergioreynoso");
+// Initial profile
+renderData("octocat");
+
+//Pass renderData to search form submit event handler
+searchBar.addSearchHandler(renderData);

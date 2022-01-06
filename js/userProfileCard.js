@@ -9,10 +9,11 @@ const userStats = document.querySelector(".user-detail__stats");
 const repos = document.querySelector(".user-detail__stat-repos");
 const followers = document.querySelector(".user-detail__stat-followers");
 const following = document.querySelector(".user-detail__stat-following");
-const location = document.querySelector(".user-detail__link-location");
-const twitter = document.querySelector(".user-detail__link-twitter");
-const blog = document.querySelector(".user-detail__link-blog");
-const company = document.querySelector(".user-detail__link-company");
+const location = document.querySelector(".user-detail__footer-link_location");
+const twitter = document.querySelector(".user-detail__footer-link_twitter");
+const blog = document.querySelector(".user-detail__footer-link_blog");
+const company = document.querySelector(".user-detail__footer-link_company");
+const footerItems = document.querySelectorAll(".user-detail__footer-link");
 
 export function renderProfile(userData) {
   const {
@@ -32,6 +33,8 @@ export function renderProfile(userData) {
 
   console.log(userData);
 
+  resetFooterItem();
+
   renderAvatar(avatar_url);
   renderName(name);
   renderLoginName(login);
@@ -45,6 +48,12 @@ export function renderProfile(userData) {
   renderBlog(blog);
   renderCompany(company);
 }
+
+const resetFooterItem = () => {
+  footerItems.forEach(el => {
+    el.closest(".user-detail__footer-link").style.opacity = "1";
+  });
+};
 
 const renderAvatar = data => {
   avatar.innerHTML = `
@@ -70,10 +79,7 @@ const renderJoinDate = data => {
 
 const renderBio = data => {
   if (!data) {
-    //Removes user bio from flow
-    bio.style.display = "none";
-
-    userStats.style.marginTop = "0";
+    bio.textContent = `This profile has no bio.`;
     return;
   }
   bio.textContent = `${data}`;

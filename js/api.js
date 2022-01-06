@@ -22,7 +22,7 @@ export async function getUserData(username) {
     });
 
     // If username is not found, throw an error message
-    if (!res.ok) throw new Error("Problem searching username");
+    if (!res.ok) throw new Error("No results");
 
     return await res.json();
   } catch (error) {
