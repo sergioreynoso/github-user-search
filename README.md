@@ -26,15 +26,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop](assets/screenshots/desktop.jpeg)
-
 <!-- ![Mobile](assets/screenshots/mobile.jpeg) -->
 
 ![Desktop](./assets/desktop.png)
-![Tablet](./assets/tablet.png)
-![Mobile](./assets/mobile.png)
-
-<!-- <img src="assets/screenshots/mobile.jpeg" width="375" /> -->
+<img src="./assets/mobile.jpeg" width="768" />
+<img src="./assets/mobile.jpeg" width="375" />
 
 ### Links
 
