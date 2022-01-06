@@ -55,8 +55,6 @@ Users should be able to:
 
 I learned how to work with the GitHub api. While working on this project I ran into a problem with GitHubs rate limit because I was not authenticating and I was only allowed to access the api only 60 times in an hour. In order to resolve this issue I had to learn how to authenticate by requesting a private GitHub token and then use that token key in the fetch api header.
 
-### Option:1
-
 ```js
 export async function getUserData(username) {
   try {
