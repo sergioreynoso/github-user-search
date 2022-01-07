@@ -1,5 +1,5 @@
 const URL = "https://api.github.com/users/";
-const TOKEN = "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";
+// const TOKEN = DELETED;
 
 // async function getRateLimit() {
 //   // Get github rate limit
@@ -16,9 +16,9 @@ export async function getUserData(username) {
   try {
     //Get user profile
     const res = await fetch(`${URL}${username}`, {
-      headers: {
-        Authorization: `token ${TOKEN}`,
-      },
+      // headers: {
+      //   Authorization: `token ${TOKEN}`,
+      // },
     });
 
     // If username is not found, throw an error message
