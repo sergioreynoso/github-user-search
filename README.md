@@ -26,8 +26,6 @@ Users should be able to:
 
 ### Screenshot
 
-<!-- ![Mobile](assets/screenshots/mobile.jpeg) -->
-
 ![Desktop](./assets/desktop.png)
 <img src="./assets/tablet.png" width="768" />
 <img src="./assets/mobile.png" width="375" />
@@ -45,9 +43,9 @@ Users should be able to:
 - Semantic HTML5 markup
 - BEM Methodology
 - SCSS
-- SCSS 7-1 Pattern
 - Flexbox
 - CSS Grid
+- Fetch API
 - Mobile-first workflow
 - [Vite](https://vitejs.dev/) - Bundler
 
@@ -83,4 +81,4 @@ export async function getUserData(username) {
 
 ## Acknowledgments
 
-I would like to thank [Jonas Schmedtmann](https://codingheroes.io) for all his great [UDemy courses](https://www.udemy.com/user/jonasschmedtmann/), as well as [Kevin Powell](https://www.kevinpowell.co) for all the great css content.
+I would like to thank [Jonas Schmedtmann](https://codingheroes.io) for all his great [UDemy courses](https://www.udemy.com/user/jonasschmedtmann/), as well as [Kevin Powell](https://www.kevinpowell.co) for all the great css content and the whole [UI.dev](https://ui.dev/) community.
