@@ -14,9 +14,10 @@ export function addSearchHandler(renderData) {
 }
 
 export const toggleErrorMsg = isError => {
+  //Set aria-invalid attribute of search input to display error message.
   isError
-    ? errorMsg.classList.remove("hideErrorMsg")
-    : errorMsg.classList.add("hideErrorMsg");
+    ? searchInput.setAttribute("aria-invalid", true)
+    : searchInput.setAttribute("aria-invalid", false);
 };
 
 searchInput.addEventListener("input", e => {

@@ -78,15 +78,13 @@
             name="text"
             class="search-form__input"
             placeholder="Search Github username..."
-            aria-label="search"
+            aria-invalid="false"
+            aria-errormessage="error-msg"
           />
 
-          <p
-            class="search-form__error-message hideErrorMsg"
-            aria-label="Search error message"
-          >
+          <span class="search-form__error-message hideErrorMsg" id="error-msg">
             No results
-          </p>
+          </span>
           <button
             type="submit"
             class="search-form__button button"

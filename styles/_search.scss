@@ -26,6 +26,13 @@
     }
   }
 
+  &__error-message {
+    visibility: hidden;
+    [aria-invalid="true"] ~ & {
+      visibility: visible;
+    }
+  }
+
   &__button {
     flex: 0 0 auto;
   }
