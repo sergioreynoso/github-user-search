@@ -3,6 +3,7 @@
   --clr-blue-500: 212 100% 50%;
   --clr-white-50: 0 0% 100%;
   --clr-slate-100: 227 100% 98%;
+  --clr-slate-200: 222 44% 70%;
   --clr-slate-300: 217 20% 51%;
   --clr-slate-400: 217 35% 45%;
   --clr-slate-450: 227 46% 51%;
@@ -51,7 +52,7 @@
 
   /* Header */
   --clr-dark-mode-toggle: hsl(var(--clr-white-50));
-  --clr-dark-mode-toggle-hover: hsl(var(--clr-slate-400));
+  --clr-dark-mode-toggle-hover: hsl(var(--clr-slate-200));
 
   /* Search Bar */
   --clr-search-bar-bg: hsl(var(--clr-slate-600));
