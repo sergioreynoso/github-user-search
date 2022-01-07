@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution]()
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/responsive-layout-mobile-1st-scss-flexbox-grids-vanilla-js-vite-9jpPGX-7X)
 
 - Live Site URL: [Live Site](https://vibrant-shirley-9979e9.netlify.app/)
 
