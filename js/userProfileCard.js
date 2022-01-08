@@ -1,8 +1,8 @@
 import { footerLinksEmptyState } from "./helpers";
 
-const avatar = document.querySelector(".user-detail__img");
+const avatar = document.querySelector(".user-detail__avatar");
 const name = document.querySelector(".user-detail__name");
-const loginName = document.querySelector(".user-detail__user-login");
+const username = document.querySelector(".user-detail__username");
 const joinDate = document.querySelector(".user-detail__join-date");
 const bio = document.querySelector(".user-detail__bio");
 const userStats = document.querySelector(".user-detail__stats");
@@ -37,7 +37,7 @@ export function renderProfile(userData) {
 
   renderAvatar(avatar_url);
   renderName(name);
-  renderLoginName(login);
+  renderUsername(login);
   renderJoinDate(created_at);
   renderBio(bio);
   renderRepos(public_repos);
@@ -56,20 +56,15 @@ const resetFooterItem = () => {
 };
 
 const renderAvatar = data => {
-  avatar.innerHTML = `
-  <img
-    src=${data}
-    alt="user avatar"
-  />
-  `;
+  avatar.setAttribute("src", data);
 };
 
 const renderName = data => {
   name.textContent = `${data}`;
 };
 
-const renderLoginName = data => {
-  loginName.textContent = `@${data}`;
+const renderUsername = data => {
+  username.textContent = `@${data}`;
 };
 
 const renderJoinDate = data => {
@@ -78,11 +73,7 @@ const renderJoinDate = data => {
 };
 
 const renderBio = data => {
-  if (!data) {
-    bio.textContent = `This profile has no bio.`;
-    return;
-  }
-  bio.textContent = `${data}`;
+  bio.textContent = `${data || "This profile has no bio."}`;
 };
 
 const renderRepos = data => {

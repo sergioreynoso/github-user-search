@@ -100,17 +100,15 @@ a {
 }
 
 .container {
-  width: 100%;
-  padding-inline: 1.5rem;
-
-  @media (min-width: vars.$bp-tablet) {
-    padding-inline: 6.125rem;
-  }
-}
-
-main {
   margin-top: clamp(1.9375rem, 15vw, 9rem);
   margin-inline: auto;
+  padding-inline: 1.5rem;
   min-width: 20.4375rem;
-  max-width: 45.625rem;
+  max-width: 35.8125rem;
+
+  @media (min-width: vars.$bp-desktop) {
+    padding-inline: 0rem;
+
+    max-width: 45.625rem;
+  }
 }

@@ -17,6 +17,9 @@ async function renderData(username) {
 
 // Initial default profile
 renderData("octocat");
+// renderData("sergioreynoso");
+// renderData("tylermcginnis");
+// renderData("benawad");
 
 //Pass renderData to search form submit event handler
 searchBar.addSearchHandler(renderData);
