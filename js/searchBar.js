@@ -6,20 +6,22 @@ export function addSearchHandler(renderData) {
   searchForm.addEventListener("submit", e => {
     e.preventDefault();
     if (!searchInput.value) {
-      searchInput.setAttribute("placeholder", "Please input a username");
+      errorMsg.textContent = "Please input a username";
       return;
     }
+    toggleErrorMsg(false);
     renderData(searchInput.value);
   });
 }
 
 export const toggleErrorMsg = isError => {
-  //Set aria-invalid attribute of search input to display error message.
-  isError
-    ? searchInput.setAttribute("aria-invalid", true)
-    : searchInput.setAttribute("aria-invalid", false);
+  isError ? (errorMsg.textContent = "No results") : (errorMsg.textContent = "");
 };
 
 searchInput.addEventListener("input", e => {
   if (e.target.value.length <= 0) toggleErrorMsg(false);
+});
+
+searchInput.addEventListener("focus", e => {
+  toggleErrorMsg(false);
 });
