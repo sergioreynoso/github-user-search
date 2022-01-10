@@ -10,8 +10,8 @@ const switchDarkModeToggleBtn = () => {
 };
 
 colorTheme.addEventListener("change", e => {
-  console.log(e);
   const { matches } = e;
+
   matches
     ? body.classList.add("dark-mode")
     : body.classList.remove("dark-mode");
@@ -19,7 +19,7 @@ colorTheme.addEventListener("change", e => {
   switchDarkModeToggleBtn();
 });
 
-darkModeToggleBtn.addEventListener("click", () => {
+darkModeToggleBtn.addEventListener("click", e => {
   body.classList.toggle("dark-mode");
   switchDarkModeToggleBtn();
 });
