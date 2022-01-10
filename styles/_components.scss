@@ -47,8 +47,13 @@
     font-size: var(--fs-350);
 
     &:hover,
-    &:focus &:active {
+    &:focus,
+    &:active {
       opacity: 0.8;
+    }
+
+    &:focus {
+      outline: 4px solid hsl(var(--clr-slate-800));
     }
 
     @media (min-width: vars.$bp-tablet) {
@@ -59,7 +64,6 @@
   /* Input */
 
   &__input {
-    // position: relative;
     border: 0;
     font-size: var(--fs-300);
     line-height: var(--lh-300);

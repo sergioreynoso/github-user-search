@@ -1,5 +1,5 @@
 const URL = "https://api.github.com/users/";
-const TOKEN = "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";
+const TOKEN = "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";
 
 async function getRateLimit() {
   // Get github rate limit
