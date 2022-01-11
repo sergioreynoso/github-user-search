@@ -5,7 +5,6 @@ const name = document.querySelector(".user-detail__name");
 const username = document.querySelector(".user-detail__username");
 const joinDate = document.querySelector(".user-detail__join-date");
 const bio = document.querySelector(".user-detail__bio");
-const userStats = document.querySelector(".user-detail__stats");
 const repos = document.querySelector(".user-detail__stat-repos");
 const followers = document.querySelector(".user-detail__stat-followers");
 const following = document.querySelector(".user-detail__stat-following");
