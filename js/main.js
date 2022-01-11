@@ -9,7 +9,6 @@ async function renderData(username) {
     const userData = await getUserData(username);
     userProfile.renderProfile(userData);
   } catch (error) {
-    // console.error(`${error.message} 💥`);
     //Toggle error message when search input cannot be found
     searchBar.toggleErrorMsg(true);
   }
@@ -17,9 +16,6 @@ async function renderData(username) {
 
 // Initial default profile
 renderData("octocat");
-// renderData("sergioreynoso");
-// renderData("tylermcginnis");
-// renderData("benawad");
 
 //Pass renderData to search form submit event handler
 searchBar.addSearchHandler(renderData);

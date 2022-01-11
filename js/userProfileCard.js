@@ -31,8 +31,6 @@ export function renderProfile(userData) {
     company,
   } = userData;
 
-  console.log(userData);
-
   resetFooterItem();
 
   renderAvatar(avatar_url);
