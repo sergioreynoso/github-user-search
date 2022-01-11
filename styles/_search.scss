@@ -31,4 +31,17 @@
   &__button {
     flex: 0 0 auto;
   }
+
+  &__error-message {
+    color: var(--clr-error);
+    position: absolute;
+    left: 0;
+    top: -1.875rem;
+
+    @media (min-width: vars.$bp-desktop) {
+      right: 8.75rem;
+      left: inherit;
+      top: inherit;
+    }
+  }
 }
