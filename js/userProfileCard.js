@@ -14,12 +14,9 @@ const blog = document.querySelector(".footer__item_blog");
 const company = document.querySelector(".footer__item_company");
 const footerItem = document.querySelectorAll(".footer__item");
 
-const allFooterItems = [...document.querySelectorAll(".footer__item")];
-
-console.log(allFooterItems);
-
 export function renderProfile(userData) {
   const {
+    html_url,
     avatar_url,
     name,
     created_at,
@@ -34,11 +31,13 @@ export function renderProfile(userData) {
     company,
   } = userData;
 
+  console.log(userData);
+
   resetFooterItem();
 
   renderAvatar(avatar_url);
   renderName(name);
-  renderUsername(login);
+  renderUsername(login, html_url);
   renderJoinDate(created_at);
   renderBio(bio);
   renderRepos(public_repos);
@@ -64,8 +63,9 @@ const renderName = data => {
   name.textContent = `${data}`;
 };
 
-const renderUsername = data => {
-  username.textContent = `@${data}`;
+const renderUsername = (name, url) => {
+  username.setAttribute("href", url);
+  username.textContent = `@${name}`;
 };
 
 const renderJoinDate = data => {
