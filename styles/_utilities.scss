@@ -16,8 +16,12 @@
   border: 0;
 }
 
-/* UI */
+// Disable links
+.disabled {
+  pointer-events: none;
+}
 
+/* UI */
 .card-bg {
   background-color: var(--clr-card-bg);
   box-shadow: var(--clr-card--shadow);

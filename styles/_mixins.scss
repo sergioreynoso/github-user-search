@@ -1,0 +1,7 @@
+@mixin preventOverflowText($el) {
+  #{$el} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

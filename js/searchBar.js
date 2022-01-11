@@ -41,5 +41,3 @@ searchInput.addEventListener("focus", e => {
 const updateScreenReaderFeedback = msg => {
   screenReaderFeedback.textContent = `${msg}`;
 };
-
-//Screen reader announcement when profile is loaded

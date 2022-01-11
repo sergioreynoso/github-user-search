@@ -9,11 +9,11 @@ const userStats = document.querySelector(".user-detail__stats");
 const repos = document.querySelector(".user-detail__stat-repos");
 const followers = document.querySelector(".user-detail__stat-followers");
 const following = document.querySelector(".user-detail__stat-following");
-const location = document.querySelector(".user-detail__footer-link_location");
-const twitter = document.querySelector(".user-detail__footer-link_twitter");
-const blog = document.querySelector(".user-detail__footer-link_blog");
-const company = document.querySelector(".user-detail__footer-link_company");
-const footerItems = document.querySelectorAll(".user-detail__footer-link");
+const location = document.querySelector(".footer__item_location");
+const twitter = document.querySelector(".footer__item_twitter");
+const blog = document.querySelector(".footer__item_blog");
+const company = document.querySelector(".footer__item_company");
+const footerItem = document.querySelectorAll(".footer__item");
 
 export function renderProfile(userData) {
   const {
@@ -30,8 +30,6 @@ export function renderProfile(userData) {
     blog,
     company,
   } = userData;
-
-  // console.log(userData);
 
   resetFooterItem();
 
@@ -50,8 +48,8 @@ export function renderProfile(userData) {
 }
 
 const resetFooterItem = () => {
-  footerItems.forEach(el => {
-    el.closest(".user-detail__footer-link").style.opacity = "1";
+  footerItem.forEach(el => {
+    el.closest(".footer__item").style.opacity = "1";
   });
 };
 
@@ -88,6 +86,8 @@ const renderFollowing = data => {
   following.lastElementChild.textContent = `${data}`;
 };
 
+//-------Footer Items--------\\
+
 const renderLocation = data => {
   if (!data) {
     footerLinksEmptyState(location);
@@ -97,19 +97,29 @@ const renderLocation = data => {
 };
 
 const renderTwitter = data => {
+  const twitterLink = twitter.lastElementChild;
+
   if (!data) {
     footerLinksEmptyState(twitter);
+    //Disables the link
+    twitterLink.classList.add("disabled");
     return;
   }
-  twitter.lastElementChild.innerHTML = `<a rel="noopener noreferrer nofollow" target="_blank"  href="https://twitter.com/${data}">${data}</a>`;
+
+  twitterLink.textContent = data;
+  twitterLink.setAttribute("href", `https://twitter.com/${data}`);
 };
 
 const renderBlog = data => {
+  const blogLink = blog.lastElementChild;
   if (!data) {
     footerLinksEmptyState(blog);
+    //Disables the link
+    blogLink.classList.add("disabled");
     return;
   }
-  blog.lastElementChild.innerHTML = `<a rel="noopener noreferrer nofollow" target="_blank"  href="https://${data}">${data}</a>`;
+  blogLink.textContent = data;
+  blogLink.setAttribute("href", data);
 };
 
 const renderCompany = data => {
@@ -117,5 +127,5 @@ const renderCompany = data => {
     footerLinksEmptyState(company);
     return;
   }
-  company.lastElementChild.innerHTML = `<a rel="noopener noreferrer nofollow" target="_blank" href="https://${data}">${data}</a>`;
+  company.lastElementChild.textContent = data;
 };

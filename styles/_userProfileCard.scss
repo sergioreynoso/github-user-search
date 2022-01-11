@@ -129,7 +129,7 @@
     }
   }
 
-  &__footer-links {
+  &__footer {
     grid-column: 1 / -1;
 
     display: grid;
@@ -143,24 +143,35 @@
       grid-column: 2 / -1;
     }
   }
+}
 
-  &__footer-link {
+.footer {
+  &__item {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
     overflow: hidden;
+  }
 
-    & svg {
-      width: 1.25rem;
-      height: 1.25rem;
-      fill: var(--clr-text-body);
-    }
+  &__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: var(--clr-text-body);
+  }
 
-    & span {
-      & a {
-        color: var(--clr-text-body);
-      }
-    }
+  &__text {
+    //Cuts long text and add ellipsis and prevent text from wrapping
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__link {
+    //Cuts long text and add ellipsis and prevent text from wrapping
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--clr-text-body);
   }
 }
