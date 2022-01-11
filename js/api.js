@@ -13,13 +13,13 @@ async function getRateLimit() {
 }
 
 export async function getUserData(username) {
-  getRateLimit();
+  // getRateLimit();
   try {
     //Get user profile
     const res = await fetch(`${URL}${username}`, {
-      headers: {
-        Authorization: `token ${TOKEN}`,
-      },
+      // headers: {
+      //   Authorization: `token ${TOKEN}`,
+      // },
     });
 
     // If username is not found, throw an error message
