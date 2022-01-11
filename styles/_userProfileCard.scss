@@ -1,4 +1,5 @@
 @use "./variables" as vars;
+@use "./mixins" as mix;
 
 .user-detail {
   display: grid;
@@ -162,16 +163,13 @@
 
   &__text {
     //Cuts long text and add ellipsis and prevent text from wrapping
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    @include mix.preventOverflowText;
   }
 
   &__link {
     //Cuts long text and add ellipsis and prevent text from wrapping
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    @include mix.preventOverflowText;
+
     color: var(--clr-text-body);
   }
 }

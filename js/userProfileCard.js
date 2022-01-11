@@ -14,6 +14,10 @@ const blog = document.querySelector(".footer__item_blog");
 const company = document.querySelector(".footer__item_company");
 const footerItem = document.querySelectorAll(".footer__item");
 
+const allFooterItems = [...document.querySelectorAll(".footer__item")];
+
+console.log(allFooterItems);
+
 export function renderProfile(userData) {
   const {
     avatar_url,
