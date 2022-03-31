@@ -1,28 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.scss";
+import Header from "../components/header/Header";
 
 const appName = "devfinder";
 
 const Home: NextPage = () => {
+  console.log("Rendered");
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>{appName}</title>
         <meta name="description" content="Search github users" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header>
-        <h1>{appName}</h1>
-        <div>dark</div>
-      </header>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
+      <Header />
+      <main className="main"></main>
     </div>
   );
 };
