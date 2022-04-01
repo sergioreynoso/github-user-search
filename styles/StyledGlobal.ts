@@ -6,7 +6,7 @@ import StyledTypography from "./StyledTypography";
 const StyledGlobal = createGlobalStyle`
   ${StyledNormalize}
   ${StyledVariables}
-  ${StyledTypography}
+  ${StyledTypography} 
 
   .container {
     width: 730px;
