@@ -5,7 +5,6 @@ import Header from "../components/header/Header";
 const appName = "devfinder";
 
 const Home: NextPage = () => {
-  console.log("Rendered");
   return (
     <div className="container">
       <Head>

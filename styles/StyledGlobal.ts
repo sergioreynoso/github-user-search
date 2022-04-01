@@ -12,6 +12,10 @@ const StyledGlobal = createGlobalStyle`
     width: 730px;
     padding: 1.9375rem 1.5rem;
   }
+
+  body {
+    font-family: "Space Mono", monospace;
+  }
   
   #__next { 
     display: flex;
