@@ -16,13 +16,16 @@ const StyledGlobal = createGlobalStyle`
   body {
     font-family: "Space Mono", monospace;
   }
+
+  .bg-color{
+    background-color: var(--clr-bg);
+  }
   
   #__next { 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: var(--clr-bg);
   }
 `;
 
