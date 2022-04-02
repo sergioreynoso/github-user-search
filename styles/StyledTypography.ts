@@ -2,6 +2,7 @@ import { css } from "styled-components";
 
 const StyledTypography = css`
   body {
+    font-family: "Space Mono", monospace;
     font-size: var(--fs-300);
     line-height: var(--lh-400);
 

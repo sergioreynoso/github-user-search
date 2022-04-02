@@ -2,6 +2,8 @@ import { css } from "styled-components";
 
 const StyledVariables = css`
   :root {
+    --border-radius-400: 0.9375rem;
+
     /* TYPOGRAPHY */
     /* font-sizes */
     --fs-700: 1.625rem;

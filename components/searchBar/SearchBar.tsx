@@ -1,5 +1,6 @@
 import React from "react";
+import StyledSearchBar from "./StyleSearchBar";
 
 export default function SearchBar() {
-  return <div>SearchBar</div>;
+  return <StyledSearchBar>SearchBar</StyledSearchBar>;
 }
