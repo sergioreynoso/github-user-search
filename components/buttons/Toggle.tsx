@@ -33,12 +33,12 @@ export default function DarkModeToggle() {
   if (!mounted) return null;
 
   const onClickHandler = () => {
-    setTheme((ts: string) => (ts === "light" ? "dark" : "light"));
+    theme === "dark" ? setTheme("light") : setTheme("dark");
   };
+  console.log(theme);
   return (
     <StyledToggle onClick={onClickHandler}>
-      {theme}
-      {/* <span className="label">{theme}</span> */}
+      <span className="label">{theme}</span>
       <div className="icons">
         <MoonIcon theme={theme} />
         <SunIcon theme={theme} />
