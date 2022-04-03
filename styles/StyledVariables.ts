@@ -2,15 +2,16 @@ import { css } from "styled-components";
 
 const StyledVariables = css`
   :root {
+    /* || BORDER RADIUS */
     --border-radius-400: 0.9375rem;
 
-    /* TYPOGRAPHY */
+    /* || TYPOGRAPHY */
     /* font-sizes */
     --fs-700: 1.625rem;
     --fs-600: 1.375rem;
     --fs-550: 1.125rem;
-    --fs-500: 1rem;
-    --fs-400: 0.9375rem;
+    --fs-500: 16px;
+    --fs-400: .9375rem;
     --fs-350: 0.875rem;
     --fs-300: 0.8125rem;
     --fs-200: 0.6875rem;
@@ -22,7 +23,7 @@ const StyledVariables = css`
     --lh-400: 1.5625rem;
     --lh-300: 1.25rem;
 
-    /* COLORS */
+    /* || COLORS */
     --clr-blue-500: 212 100% 50%;
     --clr-white-50: 0 0% 100%;
     --clr-slate-100: 227 100% 98%;
@@ -38,6 +39,9 @@ const StyledVariables = css`
     --clr-accent: hsl(var(--clr-blue-500));
     --clr-error: hsl(var(--clr-red-400));
 
+    /* || SHADOWS */
+    --shadow-400: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567)
+
     /* Text Color */
     --clr-text-accent: hsl(var(--clr-blue-500));
     --clr-text-heading: hsl(var(--clr-slate-800));
@@ -46,7 +50,6 @@ const StyledVariables = css`
     /* Background Color */
     --clr-bg: hsl(var(--clr-slate-100));
     --clr-card-bg: hsl(var(--clr-white-50));
-    --clr-card--shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
 
     /* Header */
     --clr-dark-mode-toggle: hsl(var(--clr-slate-400));
@@ -63,7 +66,7 @@ const StyledVariables = css`
   }
 
   /* ------- Dark mode ------- */
-  .dark-mode {
+  [data-theme='dark'] {
     /* Text Color */
     --clr-text-heading: hsl(var(--clr-white-50));
     --clr-text-body: hsl(var(--clr-white-50));

@@ -23,7 +23,8 @@ const StyledToggle = styled.button`
 
   .label {
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 700;
+    letter-spacing: 2.5px;
     color: var(--clr-dark-mode-toggle);
   }
 

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import StyledToggle from "./StyledToggle";
+import { useTheme } from "next-themes";
 
-const MoonIcon: React.FC<{ state: boolean }> = ({ state }) => (
+const MoonIcon: React.FC<{ theme: string }> = ({ theme }) => (
   <svg
-    className={`icon moon ${!state ? "active" : ""}`}
+    className={`icon moon ${theme === "light" ? "active" : ""}`}
     width={20}
     height={20}
     xmlns="http://www.w3.org/2000/svg"
@@ -12,9 +13,9 @@ const MoonIcon: React.FC<{ state: boolean }> = ({ state }) => (
   </svg>
 );
 
-const SunIcon: React.FC<{ state: boolean }> = ({ state }) => (
+const SunIcon: React.FC<{ theme: string }> = ({ theme }) => (
   <svg
-    className={`icon sun ${state ? "active" : ""}`}
+    className={`icon sun ${theme === "dark" ? "active" : ""}`}
     width={20}
     height={20}
     xmlns="http://www.w3.org/2000/svg"
@@ -24,16 +25,23 @@ const SunIcon: React.FC<{ state: boolean }> = ({ state }) => (
 );
 
 export default function DarkModeToggle() {
-  const [toggle, setToggle] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+
   const onClickHandler = () => {
-    setToggle(t => (t ? false : true));
+    setTheme((ts: string) => (ts === "light" ? "dark" : "light"));
   };
   return (
     <StyledToggle onClick={onClickHandler}>
-      <span className="label">{toggle ? "Light" : "Dark"}</span>
+      {theme}
+      {/* <span className="label">{theme}</span> */}
       <div className="icons">
-        <MoonIcon state={toggle} />
-        <SunIcon state={toggle} />
+        <MoonIcon theme={theme} />
+        <SunIcon theme={theme} />
       </div>
     </StyledToggle>
   );

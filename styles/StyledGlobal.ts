@@ -15,8 +15,7 @@ const StyledGlobal = createGlobalStyle`
     flex-direction: column;
     gap: 2.25rem;
 
-    max-width: 730px;
-    min-width: 375px;
+    width: 730px;
     padding: 1.9375rem 1.5rem;
   }
 

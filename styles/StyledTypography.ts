@@ -1,63 +1,43 @@
 import { css } from "styled-components";
+import {
+  FONT_SIZES as fs,
+  LINE_HEIGHT as lh,
+  BREAK_POINTS as bp,
+} from "../design-tokens";
 
 const StyledTypography = css`
   body {
     font-family: "Space Mono", monospace;
-    font-size: var(--fs-300);
-    line-height: var(--lh-400);
+    font-size: ${fs.fz050};
+    line-height: ${lh.lh200};
 
-    @media (min-width: vars.$bp-tablet) {
-      font-size: var(--fs-400);
-      line-height: var(--lh-400);
+    @media (min-width: ${bp.tablet}) {
+      font-size: ${fs.fz100};
+      line-height: ${lh.lh200};
     }
   }
 
   h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: Bold;
+  h2 {
+    font-weight: 700;
   }
 
   h1 {
-    font-size: var(--fs-700);
-    line-height: var(--lh-700);
+    font-size: ${fs.fz400};
+    line-height: ${lh.lh400};
   }
 
   h2 {
-    font-size: var(--fs-500);
-    line-height: var(--lh-500);
+    font-size: ${fs.fz200};
+    line-height: ${lh.lh100};
 
-    @media (min-width: vars.$bp-tablet) {
-      font-size: var(--fs-700);
-      line-height: var(--lh-300);
+    @media (min-width: ${bp.tablet}) {
+      font-size: ${fs.fz400};
+      line-height: ${lh.lh400};
     }
-  }
-
-  h3 {
-    font-size: var(--fs-500);
-    line-height: var(--lh-500);
-  }
-
-  h4 {
-    font-size: var(--fs-300);
-    line-height: var(--lh-300);
   }
 
   p {
-    font-size: var(--fs-300);
-    line-height: var(--lh-400);
-
-    @media (min-width: vars.$bp-tablet) {
-      font-size: var(--fs-400);
-      line-height: var(--lh-400);
-    }
-  }
-
-  .bold {
-    font-weight: 700;
   }
 `;
 
