@@ -31,6 +31,9 @@ const StyledGlobal = createGlobalStyle`
     align-items: center;
 
     height: 100%;
+    background-color: var(--clr-bg);
+
+    transition: background-color .5s ease-in-out;
   }
 `;
 

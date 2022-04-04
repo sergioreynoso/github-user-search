@@ -17,6 +17,10 @@ export const COLORS = {
   error: "#F74646",
 };
 
+export const SHADOWS = {
+  shadow100: "0px 16px 30px -10px rgba(70, 96, 187, 0.198567)",
+};
+
 export const FONT_SIZES = {
   fz050: `13px`,
   fz100: `15px`,
@@ -36,4 +40,10 @@ export const LINE_HEIGHT = {
 export const ROUND_CORNERS = {
   rc050: ".625rem",
   rc100: ".9375rem",
+};
+
+export const ANIMATION_TIME = {
+  slow: "1s",
+  med: ".5s",
+  fast: ".2s",
 };

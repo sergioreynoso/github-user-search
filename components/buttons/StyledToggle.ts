@@ -1,22 +1,26 @@
 import styled from "styled-components";
+import { ANIMATION_TIME as at } from "../../design-tokens";
 
 const StyledToggle = styled.button`
   & {
     display: flex;
     gap: 0 16px;
-    cursor: pointer;
+
     border: none;
+    color: var(--clr-body);
     background-color: transparent;
+
+    cursor: pointer;
 
     &:hover {
       .label {
-        color: var(--clr-dark-mode-toggle-hover);
+        color: var(--clr-hover);
       }
       .moon {
-        fill: var(--clr-dark-mode-toggle-hover);
+        fill: var(--clr-hover);
       }
       .sun {
-        fill: var(--clr-dark-mode-toggle-hover);
+        fill: var(--clr-hover);
       }
     }
   }
@@ -26,12 +30,13 @@ const StyledToggle = styled.button`
     font-weight: 700;
     letter-spacing: 2.5px;
     color: var(--clr-dark-mode-toggle);
+    transition: all 0.5s;
   }
 
   .icons {
     position: relative;
     align-self: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 20px;
     height: 20px;
   }
@@ -45,21 +50,23 @@ const StyledToggle = styled.button`
   .moon {
     z-index: 1;
     opacity: 0;
-    transform: translateY(20px);
-    fill: var(--clr-dark-mode-toggle);
-    transition: transform 0.5s ease-in-out, opacity 0.2s linear;
+    transform: rotate(-90deg);
+    fill: var(--clr-body);
+    transition: transform ${at.med} ease-in-out, opacity ${at.fast} linear,
+      fill ${at.fast} linear;
   }
 
   .sun {
     opacity: 0;
-    transform: translateY(-20px);
-    fill: var(--clr-dark-mode-toggle);
-    transition: transform 0.5s ease-in-out, opacity 0.2s linear;
+    transform: rotate(90deg);
+    fill: var(--clr-body);
+    transition: transform ${at.med} ease-in-out, opacity ${at.fast} linear,
+      fill ${at.fast} linear;
   }
 
   .active {
     opacity: 1;
-    transform: translateY(0);
+    transform: rotate(0deg);
   }
 `;
 

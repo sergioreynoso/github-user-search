@@ -1,15 +1,22 @@
 import styled from "styled-components";
+import CardBg from "../cardBg/CardBg";
 
-const StyledSearchBar = styled.div`
+import { BREAK_POINTS as bp, ROUND_CORNERS as rc } from "../../design-tokens";
+
+const StyledSearchBar = styled(CardBg)`
   display: flex;
   justify-content: center;
   align-items: center;
 
+  padding: 0.4063rem 0.4375rem;
   height: 4.3125rem;
-  background-color: var(--clr-search-bar-bg);
+  background-color: var(--clr-card-bg);
 
-  border-radius: var(--border-radius-400);
-  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  color: var(--clr-body);
+
+  @media (min-width: ${bp.desktop}) {
+    padding: 0.5938rem 0.625rem;
+  }
 `;
 
 export default StyledSearchBar;
