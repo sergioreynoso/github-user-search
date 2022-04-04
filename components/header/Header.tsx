@@ -1,5 +1,5 @@
 import React from "react";
-import DarkModeToggle from "../buttons/Toggle";
+import DarkModeToggle from "../toggle/Toggle";
 import StyledHeader from "./StyledHeader";
 
 export default function Header() {

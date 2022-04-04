@@ -35,7 +35,7 @@ export default function DarkModeToggle() {
   const onClickHandler = () => {
     theme === "dark" ? setTheme("light") : setTheme("dark");
   };
-  console.log(theme);
+
   return (
     <StyledToggle onClick={onClickHandler}>
       <span className="label">{theme === "light" ? "dark" : "light"}</span>
