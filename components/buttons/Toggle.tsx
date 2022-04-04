@@ -38,7 +38,7 @@ export default function DarkModeToggle() {
   console.log(theme);
   return (
     <StyledToggle onClick={onClickHandler}>
-      <span className="label">{theme}</span>
+      <span className="label">{theme === "light" ? "dark" : "light"}</span>
       <div className="icons">
         <MoonIcon theme={theme} />
         <SunIcon theme={theme} />
