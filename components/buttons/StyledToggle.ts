@@ -12,15 +12,18 @@ const StyledToggle = styled.button`
 
     cursor: pointer;
 
-    &:hover {
-      .label {
-        color: var(--clr-hover);
-      }
-      .moon {
-        fill: var(--clr-hover);
-      }
-      .sun {
-        fill: var(--clr-hover);
+    /* Hover will only work on none-touch devices */
+    @media (hover: hover) {
+      &:hover {
+        .label {
+          color: var(--clr-hover);
+        }
+        .moon {
+          fill: var(--clr-hover);
+        }
+        .sun {
+          fill: var(--clr-hover);
+        }
       }
     }
   }
