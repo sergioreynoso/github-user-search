@@ -8,12 +8,19 @@ import {
 const StyledTypography = css`
   body {
     font-family: "Space Mono", monospace;
-    font-size: ${fs.fz050};
     line-height: ${lh.lh200};
 
     @media (min-width: ${bp.tablet}) {
       font-size: ${fs.fz100};
       line-height: ${lh.lh200};
+    }
+  }
+
+  input {
+    font-size: ${fs.fz050};
+
+    @media (min-width: ${bp.tablet}) {
+      font-size: ${fs.fz250};
     }
   }
 
@@ -37,7 +44,9 @@ const StyledTypography = css`
     }
   }
 
-  p {
+  .button {
+    font-weight: 700;
+    font-size: ${fs.fz100};
   }
 `;
 

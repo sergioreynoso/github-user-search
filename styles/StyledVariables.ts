@@ -3,6 +3,11 @@ import { COLORS as cl, SHADOWS as sh } from "../design-tokens";
 
 const StyledVariables = css`
   :root {
+    --clr-accent: ${cl.blue500};
+
+    --clr-primary-button-text: ${cl.neutral050};
+    --clr-primary-button: var(--clr-accent);
+
     --clr-body: ${cl.slate600};
     --clr-bg: ${cl.slate100};
     --clr-heading: ${cl.slate900};

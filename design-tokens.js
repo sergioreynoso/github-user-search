@@ -25,6 +25,7 @@ export const FONT_SIZES = {
   fz050: `13px`,
   fz100: `15px`,
   fz200: `16px`,
+  fz250: "18px",
   fz300: `22px`,
   fz400: `26px`,
 };
