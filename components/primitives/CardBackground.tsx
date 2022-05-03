@@ -4,7 +4,7 @@ import {
   BREAK_POINTS as bp,
   ROUND_CORNERS as rc,
   ANIMATION_TIME as at,
-} from "../../design-tokens";
+} from "../../constants";
 
 const StyledCardBg = styled.section`
   padding: 1.5rem;

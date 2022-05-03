@@ -1,39 +1,44 @@
 import { createGlobalStyle } from "styled-components";
 import StyledNormalize from "./StyledNormalize";
-import StyledVariables from "./StyledVariables";
-import StyledTypography from "./StyledTypography";
 import StyledUtility from "./StyledUtility";
+import StyledTheme from "./StyledTheme";
+import {
+  FONT_SIZES as fs,
+  LINE_HEIGHT as lh,
+  BREAK_POINTS as bp,
+  COLORS as cl,
+  SHADOWS as sh,
+  ANIMATION_TIME as at,
+} from "../constants";
 
 const StyledGlobal = createGlobalStyle`
   ${StyledNormalize}
-  ${StyledVariables}
-  ${StyledTypography} 
   ${StyledUtility}
+  ${StyledTheme}
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 2.25rem;
-
-    width: 730px;
-    padding: 1.9375rem 1.5rem;
+  body {
+    font-family: "Space Mono", monospace;
+    line-height: ${lh.lh200};
   }
 
-  .main{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    color: var(--clr-heading);
+    transition: color ${at.med} ease-in-out;
   }
   
   #__next { 
     display: flex;
     justify-content: center;
-    align-items: center;
-
     height: 100%;
+    padding-block-start:144px;
     background-color: var(--clr-bg);
-
-    transition: background-color .5s ease-in-out;
+    transition: background-color ${at.med} ease-in-out;
   }
 `;
 

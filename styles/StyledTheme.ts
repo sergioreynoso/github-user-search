@@ -1,7 +1,8 @@
 import { css } from "styled-components";
-import { COLORS as cl, SHADOWS as sh } from "../design-tokens";
+import { COLORS as cl, SHADOWS as sh } from "../constants";
 
-const StyledVariables = css`
+const StyledTheme = css`
+  /* ------- Light-Mode Color Variables ------- */
   :root {
     --clr-accent: ${cl.blue500};
 
@@ -16,7 +17,7 @@ const StyledVariables = css`
     --clr-hover: ${cl.slate900};
   }
 
-  /* ------- Dark mode ------- */
+  /* ------- Dark-Mode Color Variables ------- */
   [data-theme="dark"] {
     --clr-body: ${cl.neutral050};
     --clr-bg: ${cl.slate900};
@@ -26,4 +27,5 @@ const StyledVariables = css`
     --clr-hover: ${cl.slate500};
   }
 `;
-export default StyledVariables;
+
+export default StyledTheme;

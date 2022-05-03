@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.1.24",
+    "formik": "^2.2.9",
     "next": "^12.1.5-canary.0",
     "next-themes": "^0.1.1",
     "react": "18.0.0",

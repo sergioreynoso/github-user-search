@@ -3,17 +3,19 @@ import { css } from "styled-components";
 const StyledNormalize = css`
   /*
   1. Use a more-intuitive box-sizing model.
-    Remove default margin & padding:;
 */
   *,
   *::before,
   *::after {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
   }
   /*
-  
+  2. Remove default margin
+*/
+  * {
+    padding: 0;
+    margin: 0;
+  }
   /*
   3. Allow percentage-based heights in the application
 */

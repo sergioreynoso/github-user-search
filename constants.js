@@ -1,3 +1,5 @@
+export const USERNAME_ONLOAD = "octocat";
+
 export const BREAK_POINTS = {
   desktop: "1440px",
   tablet: "768px",
@@ -22,12 +24,12 @@ export const SHADOWS = {
 };
 
 export const FONT_SIZES = {
-  fz050: `13px`,
-  fz100: `15px`,
-  fz200: `16px`,
-  fz250: "18px",
-  fz300: `22px`,
-  fz400: `26px`,
+  fs050: `13px`,
+  fs100: `15px`,
+  fs200: `16px`,
+  fs250: "18px",
+  fs300: `22px`,
+  fs400: `26px`,
 };
 
 export const LINE_HEIGHT = {

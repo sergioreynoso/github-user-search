@@ -3,12 +3,13 @@ import {
   BREAK_POINTS as bp,
   ROUND_CORNERS as rc,
   ANIMATION_TIME as at,
-} from "../design-tokens";
+} from "../../constants";
 
-export const StyledPrimaryButton = styled.button`
-  width: 84px;
-  height: 46px;
+export const ButtonPrimary = styled.button`
+  padding: 12.5px 14px;
   border: none;
+  outline: none;
+  font-weight: 700;
 
   color: var(--clr-primary-button-text);
   background-color: var(--clr-primary-button);
@@ -20,8 +21,13 @@ export const StyledPrimaryButton = styled.button`
     opacity: 80%;
   }
 
+  &:focus-visible {
+    outline: solid 2px var(--clr-accent);
+    outline-offset: 2px;
+    color: white;
+  }
+
   @media (min-width: ${bp.tablet}) {
-    width: 6.625rem;
-    height: 3.125rem;
+    padding: 12.5px 24px;
   }
 `;
