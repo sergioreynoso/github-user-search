@@ -14,9 +14,12 @@ import { GitHubUser } from "../types";
 import { getUserData } from "../utils/api";
 
 export default function SearchBar() {
-  const { setUserData } = useContext(SearchContext);
   const [inputValue, setInputValue] = useState("");
   const [isError, setIsError] = useState(false);
+
+  const appContenxt = useContext(SearchContext);
+  if (!appContenxt) return null;
+  const { setUserData } = appContenxt;
 
   const onChangeHandler = (e: React.FormEvent<HTMLInputElement>) => {
     setInputValue(e.currentTarget.value);

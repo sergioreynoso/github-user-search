@@ -8,8 +8,9 @@ import Image from "next/image";
 import { GitHubUser } from "../types";
 
 export default function ProfileCard() {
-  const { userData } = useContext(SearchContext);
-
+  const appContenxt = useContext(SearchContext);
+  if (!appContenxt) return null;
+  const { userData } = appContenxt;
   const { name, avatar_url } = userData;
 
   return (
