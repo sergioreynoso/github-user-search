@@ -1,3 +1,10 @@
+import { Dispatch, SetStateAction } from "react";
+
+export interface UserDataStates {
+  userData: GitHubUser;
+  setUserData: Dispatch<SetStateAction<GitHubUser>>;
+}
+
 export interface GitHubUser {
   login: string;
   id: number;
@@ -21,7 +28,7 @@ export interface GitHubUser {
   company: string;
   blog: string;
   location: string;
-  email: string;
+  email: null;
   hireable: null;
   bio: null;
   twitter_username: null;

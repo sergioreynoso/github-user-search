@@ -1,4 +1,4 @@
 import { Context, createContext } from "react";
-import { GitHubUser } from "./types";
+import { GitHubUser, UserDataStates } from "./types";
 
-export const SearchContext = createContext({});
+export const SearchContext = createContext<UserDataStates>({});
