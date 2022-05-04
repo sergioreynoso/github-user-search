@@ -20,10 +20,10 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage<{ data: GitHubUser }> = ({ data }) => {
-  const [userData, SetUserData] = useState(data);
+  const [userData, setUserData] = useState(data);
 
   return (
-    <SearchContext.Provider value={{ userData, SetUserData }}>
+    <SearchContext.Provider value={{ userData, setUserData }}>
       <Wrapper>
         <Head>
           <title>{APP_NAME}</title>

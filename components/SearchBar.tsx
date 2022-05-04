@@ -14,7 +14,7 @@ import { GitHubUser } from "../types";
 import { getUserData } from "../utils/api";
 
 export default function SearchBar() {
-  const { SetUserData } = useContext(SearchContext);
+  const { setUserData } = useContext(SearchContext);
   const [inputValue, setInputValue] = useState("");
   const [isError, setIsError] = useState(false);
 
@@ -32,7 +32,7 @@ export default function SearchBar() {
   const fetchUserData = async (name: string) => {
     try {
       const data: GitHubUser = await getUserData(name);
-      SetUserData(data);
+      setUserData(data);
       setInputValue("");
     } catch (error) {
       setIsError(true);
