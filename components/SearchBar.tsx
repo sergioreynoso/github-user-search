@@ -1,25 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { SearchContext } from "../context";
 import styled from "styled-components";
 import { ButtonPrimary } from "./primitives/ButtonPrimary";
 import {
   BREAK_POINTS as bp,
   ROUND_CORNERS as rc,
   ANIMATION_TIME as at,
+  COLORS as cl,
 } from "../constants";
 import { SearchIcon } from "./primitives/Icons";
 import CardBg from "./primitives/CardBackground";
+import { GitHubUser } from "../types";
+import { getUserData } from "../utils/api";
 
 export default function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const { SetUserData } = useContext(SearchContext);
+  const [inputValue, setInputValue] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const onChangeHandler = (e: React.FormEvent<HTMLInputElement>) => {
-    console.log(e.currentTarget.value);
-    setSearchTerm(e.currentTarget.value);
+    setInputValue(e.currentTarget.value);
   };
 
   const onSubmitHandler = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log(searchTerm);
+    if (!inputValue) return;
+    fetchUserData(inputValue);
+    setIsError(false);
+  };
+
+  const fetchUserData = async (name: string) => {
+    try {
+      const data: GitHubUser = await getUserData(name);
+      SetUserData(data);
+      setInputValue("");
+    } catch (error) {
+      setIsError(true);
+    }
   };
 
   return (
@@ -33,8 +50,11 @@ export default function SearchBar() {
           <Input
             type="search"
             placeholder="Search GitHub username"
+            value={inputValue}
             onChange={onChangeHandler}
+            onFocus={() => setIsError(false)}
           />
+          {isError ? <Error>No Results</Error> : null}
         </Label>
         <ButtonPrimary type="submit">Search</ButtonPrimary>
       </Form>
@@ -112,5 +132,21 @@ const IconWrapper = styled.div`
   @media (min-width: ${bp.tablet}) {
     width: 24px;
     height: 24px;
+  }
+`;
+
+const Error = styled.span`
+  position: absolute;
+  top: 1px;
+  bottom: 0;
+  right: 20px;
+
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: ${cl.error};
+  pointer-events: none;
+
+  @media (min-width: ${bp.tablet}) {
+    font-size: 1.125rem;
   }
 `;

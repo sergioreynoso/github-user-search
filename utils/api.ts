@@ -5,14 +5,16 @@ export async function getUserData(username: string) {
   try {
     //Get user profile
     const res = await fetch(`${URL}${username}`, {
-      headers: {
-        Authorization: `token ${TOKEN}`,
-      },
+      // headers: {
+      //   Authorization: `token ${TOKEN}`,
+      // },
     });
 
     // If username is not found, throw an error message
     if (!res.ok) throw new Error("No results");
+
     const data = res.json();
+
     return data;
   } catch (error) {
     throw error;

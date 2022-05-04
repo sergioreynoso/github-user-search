@@ -1,5 +1,9 @@
 export const USERNAME_ONLOAD = "octocat";
 
+export const APP_NAME = "devfinder";
+
+export const API_URL = "https://api.github.com/users/";
+
 export const BREAK_POINTS = {
   desktop: "1440px",
   tablet: "768px",
