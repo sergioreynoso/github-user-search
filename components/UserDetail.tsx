@@ -14,14 +14,21 @@ export default function ProfileCard() {
   const appContenxt = useContext(SearchContext);
   if (!appContenxt) return null;
   const { userData } = appContenxt;
-  const { name, avatar_url, bio } = userData;
+  const { name, avatar_url, bio, login, created_at } = userData;
 
   return (
     <Wrapper>
-      <Heading2>{name}</Heading2>
-      <AvatarWrapper>
-        <Image src={avatar_url} layout="fill" alt="Avatar image" />
-      </AvatarWrapper>
+      <HeaderWrapper>
+        <AvatarWrapper>
+          <Image src={avatar_url} layout="fill" alt="Avatar image" />
+        </AvatarWrapper>
+        <TitleWrapper>
+          <Heading2>{name}</Heading2>
+          <UserName>@{login}</UserName>
+          <Paragraph>{created_at}</Paragraph>
+        </TitleWrapper>
+      </HeaderWrapper>
+
       <Paragraph>{bio}</Paragraph>
     </Wrapper>
   );
@@ -43,6 +50,14 @@ const Wrapper = styled(CardBg)`
   }
 `;
 
+const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center; */
+  gap: 20px;
+  width: 100%;
+`;
+
 const AvatarWrapper = styled.div`
   position: relative;
   width: 70px;
@@ -55,4 +70,10 @@ const AvatarWrapper = styled.div`
     width: 117px;
     height: 117px;
   }
+`;
+
+const TitleWrapper = styled.div``;
+
+const UserName = styled(Paragraph)`
+  color: var(--clr-accent);
 `;

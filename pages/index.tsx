@@ -46,8 +46,13 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 32px;
   padding: 32px 24px;
+  min-width: 375px;
+
   @media (min-width: ${bp.tablet}) {
-    max-width: 730px;
+    min-width: 573px;
+  }
+  @media (min-width: ${bp.desktop}) {
+    min-width: 730px;
   }
 `;
 
