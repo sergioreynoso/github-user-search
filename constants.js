@@ -5,7 +5,7 @@ export const APP_NAME = "devfinder";
 export const API_URL = "https://api.github.com/users/";
 
 export const BREAK_POINTS = {
-  desktop: "1440px",
+  desktop: "1200px",
   tablet: "768px",
   mobile: "375px",
 };

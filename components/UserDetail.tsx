@@ -5,24 +5,25 @@ import CardBg from "./primitives/CardBackground";
 import { BREAK_POINTS as bp, ANIMATION_TIME as at } from "../constants";
 import { Heading2, Paragraph } from "./primitives/Typography";
 import Image from "next/image";
-import { GitHubUser } from "../types";
 
 export default function ProfileCard() {
   const appContenxt = useContext(SearchContext);
   if (!appContenxt) return null;
   const { userData } = appContenxt;
-  const { name, avatar_url } = userData;
+  const { name, avatar_url, bio } = userData;
 
   return (
     <Wrapper>
       <Heading2>{name}</Heading2>
       <AvatarWrapper>
-        <Image src={avatar_url} layout="fill" alt="Avatar image" />
+        <Image
+          src={avatar_url}
+          layout="fill"
+          alt="Avatar image"
+          placeholder="blur"
+        />
       </AvatarWrapper>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-        Quisque volutpat mattis eros.
-      </Paragraph>
+      <Paragraph>{bio}</Paragraph>
     </Wrapper>
   );
 }

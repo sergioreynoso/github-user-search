@@ -9,6 +9,7 @@ import { getUserData } from "../utils/api";
 import { GitHubUser } from "../types";
 import { APP_NAME, USERNAME_ONLOAD } from "../constants";
 import { SearchContext } from "../context";
+import { BREAK_POINTS as bp } from "../constants";
 
 export const getStaticProps: GetStaticProps = async () => {
   const data: GitHubUser = await getUserData(USERNAME_ONLOAD);
@@ -44,8 +45,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-  max-width: 730px;
   padding: 32px 24px;
+  @media (min-width: ${bp.tablet}) {
+    max-width: 730px;
+  }
 `;
 
 const Main = styled.main`
