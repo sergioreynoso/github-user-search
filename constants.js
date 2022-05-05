@@ -1,11 +1,11 @@
-export const USERNAME_ONLOAD = "octocat";
+export const USERNAME_ONLOAD = "uidotdev";
 
 export const APP_NAME = "devfinder";
 
 export const API_URL = "https://api.github.com/users/";
 
 export const BREAK_POINTS = {
-  desktop: "1200px",
+  desktop: "800px",
   tablet: "768px",
   mobile: "375px",
 };
@@ -28,6 +28,7 @@ export const SHADOWS = {
 };
 
 export const FONT_SIZES = {
+  fs040: `11px`,
   fs050: `13px`,
   fs100: `15px`,
   fs200: `16px`,
@@ -45,8 +46,8 @@ export const LINE_HEIGHT = {
 };
 
 export const ROUND_CORNERS = {
-  rc050: ".625rem",
-  rc100: ".9375rem",
+  rc050: "10px",
+  rc100: "15px",
 };
 
 export const ANIMATION_TIME = {

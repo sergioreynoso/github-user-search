@@ -36,9 +36,14 @@ const StyledGlobal = createGlobalStyle`
     display: flex;
     justify-content: center;
     height: 100%;
-    padding-block-start:144px;
+    padding-block-start:24px;
+    padding-inline: 24px;
     background-color: var(--clr-bg);
     transition: background-color ${at.med} ease-in-out;
+
+    @media (min-width: ${bp.desktop}) {
+      padding-block-start:144px;
+  }
   }
 `;
 

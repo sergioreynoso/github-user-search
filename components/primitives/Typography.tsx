@@ -7,10 +7,11 @@ import {
 } from "../../constants";
 
 export const Paragraph = styled.p`
+  font-size: ${fs.fs050};
+  line-height: ${lh.lh200};
   transition: color ${at.med};
   @media (min-width: ${bp.tablet}) {
     font-size: ${fs.fs100};
-    line-height: ${lh.lh200};
   }
 `;
 
