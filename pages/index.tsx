@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import UserDetail from "../components/UserDetail";
+import UserDetail from "../components/userDetails/UserDetail";
 import SearchBar from "../components/SearchBar";
 import { getUserData } from "../utils/api";
 import { GitHubUser } from "../types";

@@ -1,17 +1,18 @@
 import React, { useState, useContext, useEffect } from "react";
-import { SearchContext } from "../context";
+import { SearchContext } from "../../context";
 import styled from "styled-components";
-import CardBg from "./primitives/CardBackground";
+import CardBg from "../primitives/CardBackground";
 import {
   BREAK_POINTS as bp,
   ANIMATION_TIME as at,
   COLORS as cl,
   ROUND_CORNERS as rc,
   FONT_SIZES as fs,
-} from "../constants";
-import { Heading1, Heading2, Paragraph } from "./primitives/Typography";
+} from "../../constants";
+import { Heading1, Heading2, Paragraph } from "../primitives/Typography";
 import Image from "next/image";
-import { getDate } from "../utils/helpers";
+import { getDate } from "../../utils/helpers";
+import Stats from "./Stats";
 
 export default function ProfileCard() {
   const appContenxt = useContext(SearchContext);
@@ -47,20 +48,11 @@ export default function ProfileCard() {
       </TitleWrapper>
       <Details>
         <Bio>{bio}</Bio>
-        <Stats>
-          <Table>
-            <TableRow>
-              <TableHeader>Repos</TableHeader>
-              <TableHeader>Followers</TableHeader>
-              <TableHeader>Following</TableHeader>
-            </TableRow>
-            <TableRow>
-              <TableCell>{public_repos}</TableCell>
-              <TableCell>{followers}</TableCell>
-              <TableCell>{following}</TableCell>
-            </TableRow>
-          </Table>
-        </Stats>
+        <Stats
+          publicRepos={public_repos}
+          followers={followers}
+          following={following}
+        />
         <Meta>User Links</Meta>
       </Details>
     </Wrapper>
@@ -143,49 +135,6 @@ const Details = styled.div`
 `;
 
 const Bio = styled(Paragraph)``;
-
-const Stats = styled.div`
-  background-color: var(--clr-bg);
-  border-radius: ${rc.rc050};
-  padding: 15px 15px;
-  @media (min-width: ${bp.desktop}) {
-    padding: 15px 32px;
-  }
-`;
-
-const Table = styled.table`
-  width: 100%;
-  text-align: left;
-`;
-
-const TableHeader = styled.th`
-  font-size: ${fs.fs040};
-  font-weight: 400;
-  @media (min-width: ${bp.desktop}) {
-    font-size: ${fs.fs050};
-  }
-`;
-
-const TableRow = styled.tr`
-  display: grid;
-  justify-items: center;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  @media (min-width: ${bp.desktop}) {
-    justify-items: initial;
-    gap: 0;
-  }
-`;
-
-const TableCell = styled.td`
-  font-size: ${fs.fs200};
-  font-weight: 700;
-  padding-block-start: 4px;
-
-  @media (min-width: ${bp.desktop}) {
-    font-size: ${fs.fs300};
-  }
-`;
 
 const Meta = styled.div`
   background-color: var(--clr-bg);
