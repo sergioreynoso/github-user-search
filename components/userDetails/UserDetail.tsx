@@ -13,6 +13,7 @@ import { Heading1, Heading2, Paragraph } from "../primitives/Typography";
 import Image from "next/image";
 import { getDate } from "../../utils/helpers";
 import Stats from "./Stats";
+import Meta from "./Meta";
 
 export default function ProfileCard() {
   const appContenxt = useContext(SearchContext);
@@ -27,6 +28,10 @@ export default function ProfileCard() {
     public_repos,
     followers,
     following,
+    location,
+    twitter_username,
+    blog,
+    company,
   } = userData;
   const { dayNum, month, year } = getDate(created_at);
   console.log(userData);
@@ -53,7 +58,12 @@ export default function ProfileCard() {
           followers={followers}
           following={following}
         />
-        <Meta>User Links</Meta>
+        <Meta
+          location={location}
+          twitterUsername={twitter_username}
+          blog={blog}
+          company={company}
+        />
       </Details>
     </Wrapper>
   );
@@ -61,7 +71,7 @@ export default function ProfileCard() {
 const Wrapper = styled(CardBg)`
   display: grid;
   grid-template-columns: min-content 1fr;
-  gap: 24px 20px;
+  gap: 24px 37px;
   padding: 24px;
   color: var(--clr-body);
 
@@ -126,17 +136,12 @@ const Details = styled.div`
   grid-column: 1 / 3;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 40px;
 
   @media (min-width: ${bp.desktop}) {
-    margin-top: -50px;
+    margin-top: -64px;
     grid-column: 2 / 3;
   }
 `;
 
 const Bio = styled(Paragraph)``;
-
-const Meta = styled.div`
-  background-color: var(--clr-bg);
-  border-radius: ${rc.rc050};
-`;

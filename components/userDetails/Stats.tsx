@@ -20,16 +20,20 @@ export default function Stats({
   return (
     <StatsWrapper>
       <Table>
-        <TableRow>
-          <TableHeader>Repos</TableHeader>
-          <TableHeader>Followers</TableHeader>
-          <TableHeader>Following</TableHeader>
-        </TableRow>
-        <TableRow>
-          <TableCell>{publicRepos}</TableCell>
-          <TableCell>{followers}</TableCell>
-          <TableCell>{following}</TableCell>
-        </TableRow>
+        <thead>
+          <TableRow>
+            <TableHeader>Repos</TableHeader>
+            <TableHeader>Followers</TableHeader>
+            <TableHeader>Following</TableHeader>
+          </TableRow>
+        </thead>
+        <tbody>
+          <TableRow>
+            <TableCell>{publicRepos}</TableCell>
+            <TableCell>{followers}</TableCell>
+            <TableCell>{following}</TableCell>
+          </TableRow>
+        </tbody>
       </Table>
     </StatsWrapper>
   );
@@ -39,6 +43,9 @@ export const StatsWrapper = styled.div`
   background-color: var(--clr-bg);
   border-radius: ${rc.rc050};
   padding: 15px 15px;
+
+  transition: background-color ${at.med};
+
   @media (min-width: ${bp.desktop}) {
     padding: 15px 32px;
   }
