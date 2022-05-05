@@ -2,7 +2,11 @@ import React, { useState, useContext, useEffect } from "react";
 import { SearchContext } from "../context";
 import styled from "styled-components";
 import CardBg from "./primitives/CardBackground";
-import { BREAK_POINTS as bp, ANIMATION_TIME as at } from "../constants";
+import {
+  BREAK_POINTS as bp,
+  ANIMATION_TIME as at,
+  COLORS as cl,
+} from "../constants";
 import { Heading2, Paragraph } from "./primitives/Typography";
 import Image from "next/image";
 
@@ -16,12 +20,7 @@ export default function ProfileCard() {
     <Wrapper>
       <Heading2>{name}</Heading2>
       <AvatarWrapper>
-        <Image
-          src={avatar_url}
-          layout="fill"
-          alt="Avatar image"
-          placeholder="blur"
-        />
+        <Image src={avatar_url} layout="fill" alt="Avatar image" />
       </AvatarWrapper>
       <Paragraph>{bio}</Paragraph>
     </Wrapper>
@@ -50,6 +49,7 @@ const AvatarWrapper = styled.div`
   height: 70px;
   border-radius: 50%;
   overflow: hidden;
+  background-color: var(--clr-body);
 
   @media (min-width: ${bp.tablet}) {
     width: 117px;
