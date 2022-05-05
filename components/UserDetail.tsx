@@ -9,23 +9,31 @@ import {
 } from "../constants";
 import { Heading2, Paragraph } from "./primitives/Typography";
 import Image from "next/image";
+import { getDate } from "../utils/helpers";
 
 export default function ProfileCard() {
   const appContenxt = useContext(SearchContext);
   if (!appContenxt) return null;
   const { userData } = appContenxt;
   const { name, avatar_url, bio, login, created_at } = userData;
+  const { dayNum, month, year } = getDate(created_at);
+  // console.log(userData);
 
   return (
     <Wrapper>
       <HeaderWrapper>
         <AvatarWrapper>
-          <Image src={avatar_url} layout="fill" alt="Avatar image" />
+          <Image
+            src={avatar_url}
+            layout="fill"
+            alt="Avatar image"
+            priority={true}
+          />
         </AvatarWrapper>
         <TitleWrapper>
           <Heading2>{name}</Heading2>
           <UserName>@{login}</UserName>
-          <Paragraph>{created_at}</Paragraph>
+          <Paragraph>{`Joined ${dayNum} ${month} ${year}`}</Paragraph>
         </TitleWrapper>
       </HeaderWrapper>
 
