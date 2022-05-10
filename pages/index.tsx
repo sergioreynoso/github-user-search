@@ -45,13 +45,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-  width: 730px;
-  @media (min-width: ${bp.mobile}) {
-    min-width: 327px;
-  }
-  @media (min-width: ${bp.tablet}) {
-    min-width: 573px;
-  }
+  max-width: 730px;
 `;
 
 const Main = styled.main`

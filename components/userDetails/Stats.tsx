@@ -40,10 +40,10 @@ export default function Stats({
 }
 
 export const StatsWrapper = styled.div`
+  display: flex;
   background-color: var(--clr-bg);
   border-radius: ${rc.rc050};
   padding: 15px 15px;
-
   transition: background-color ${at.med};
 
   @media (min-width: ${bp.desktop}) {
@@ -52,7 +52,7 @@ export const StatsWrapper = styled.div`
 `;
 
 const Table = styled.table`
-  width: 100%;
+  flex: 1;
   text-align: left;
 `;
 

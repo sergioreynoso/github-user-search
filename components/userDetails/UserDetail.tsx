@@ -136,12 +136,15 @@ const Details = styled.div`
   grid-column: 1 / 3;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
 
   @media (min-width: ${bp.desktop}) {
+    gap: 40px;
     margin-top: -64px;
     grid-column: 2 / 3;
   }
 `;
 
-const Bio = styled(Paragraph)``;
+const Bio = styled(Paragraph)`
+  flex: 1;
+`;

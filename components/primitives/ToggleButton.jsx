@@ -80,7 +80,7 @@ const ToggleButton = styled.button`
   }
 
   /* Hover will only work on none-touch devices */
-  @media (hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       ${Label} {
         color: var(--clr-hover);
