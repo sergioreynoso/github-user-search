@@ -70,6 +70,7 @@ const StyledNormalize = css`
   #root,
   #__next {
     isolation: isolate;
+    overflow: auto;
   }
 
   /*
