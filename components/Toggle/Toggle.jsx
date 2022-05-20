@@ -6,7 +6,7 @@ import Icons from "../Icons";
 
 export default function DarkModeToggle() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme("light");
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
