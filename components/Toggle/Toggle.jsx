@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import {
-  ANIMATION_TIME as at,
-  ROUND_CORNERS as rc,
-} from "../../utils/constants";
+import { ANIMATION_TIME, ROUND_CORNERS } from "../../utils/constants";
 import { useTheme } from "next-themes";
 import Icons from "../Icons";
 
@@ -35,7 +32,7 @@ const Label = styled.span`
   font-weight: 700;
   letter-spacing: 2.5px;
   color: var(--clr-dark-mode-toggle);
-  transition: all ${at.fast};
+  transition: all ${ANIMATION_TIME.fast};
 `;
 
 const IconWrapper = styled.div`
@@ -52,8 +49,8 @@ const MoonIcon = styled(Icons.Moon)`
   fill: var(--clr-body);
   opacity: ${({ theme }) => (theme === "light" ? "1" : "0")};
   transform: rotate(${({ theme }) => (theme === "light" ? "0" : "-90deg")});
-  transition: transform ${at.med} ease-in-out, opacity ${at.fast} linear,
-    fill ${at.fast} linear;
+  transition: transform ${ANIMATION_TIME.med} ease-in-out,
+    opacity ${ANIMATION_TIME.fast} linear, fill ${ANIMATION_TIME.fast} linear;
 `;
 
 const SunIcon = styled(Icons.Sun)`
@@ -63,8 +60,8 @@ const SunIcon = styled(Icons.Sun)`
   fill: var(--clr-body);
   opacity: ${({ theme }) => (theme === "dark" ? "1" : "0")};
   transform: rotate(${({ theme }) => (theme === "light" ? "90deg" : "0")});
-  transition: transform ${at.med} ease-in-out, opacity ${at.fast} linear,
-    fill ${at.fast} linear;
+  transition: transform ${ANIMATION_TIME.med} ease-in-out,
+    opacity ${ANIMATION_TIME.fast} linear, fill ${ANIMATION_TIME.fast} linear;
 `;
 
 const ToggleButton = styled.button`
@@ -75,7 +72,7 @@ const ToggleButton = styled.button`
   background-color: transparent;
   outline: none;
   cursor: pointer;
-  border-radius: ${rc.rc050};
+  border-radius: ${ROUND_CORNERS[50]};
 
   &:focus-visible {
     outline: solid 2px var(--clr-accent);

@@ -13,6 +13,7 @@
     "formik": "^2.2.9",
     "next": "^12.1.5-canary.0",
     "next-themes": "^0.1.1",
+    "ngrok": "^4.3.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "styled-components": "^5.3.5"

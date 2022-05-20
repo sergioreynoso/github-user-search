@@ -6,7 +6,7 @@ import { FONT_SIZE, LINE_HEIGHT } from "../../utils/constants";
 export default function Header() {
   return (
     <Wrapper className="header">
-      <Heading>devFinder</Heading>
+      <Heading>devfinder</Heading>
       <DarkModeToggle />
     </Wrapper>
   );
