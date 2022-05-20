@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BREAKPOINTS, QUERIES, ROUND_CORNERS } from "../../utils/constants";
+import { QUERIES, ROUND_CORNERS } from "../../utils/constants";
 
 const Button = styled.button`
   padding: 12.5px 14px;
