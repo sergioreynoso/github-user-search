@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BREAKPOINTS, ROUND_CORNERS } from "../../utils/constants";
+import { BREAKPOINTS, QUERIES, ROUND_CORNERS } from "../../utils/constants";
 
 const Button = styled.button`
   padding: 12.5px 14px;
@@ -23,7 +23,7 @@ const Button = styled.button`
     color: white;
   }
 
-  @media (min-width: ${BREAKPOINTS.tablet}) {
+  @media ${QUERIES.tabletAndUp} {
     padding: 12.5px 24px;
   }
 `;
