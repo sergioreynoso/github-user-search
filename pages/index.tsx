@@ -1,15 +1,14 @@
 import type { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import Head from "next/head";
 import Header from "../components/Header";
-import UserDetail from "../components/userDetails/UserDetail";
+import UserDetail from "../components/UserDetails";
 import SearchBar from "../components/SearchBar";
+import SearchContext from "../components/SearchContext";
 import { getUserData } from "../utils/api";
-import { GitHubUser } from "../types";
-import { APP_NAME, USERNAME_ONLOAD } from "../constants";
-import { SearchContext } from "../context";
-import { BREAK_POINTS as bp } from "../constants";
+import { GitHubUser } from "../utils/types";
+import { APP_NAME, USERNAME_ONLOAD } from "../utils/constants";
 
 export const getStaticProps: GetStaticProps = async () => {
   const data: GitHubUser = await getUserData(USERNAME_ONLOAD);

@@ -20,7 +20,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/_document.tsx",
-    "components/primitives/ToggleButton.jsx"
+    "components/primitives/Toggle.jsx"
   ],
   "exclude": ["node_modules"]
 }

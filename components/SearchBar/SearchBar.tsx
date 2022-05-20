@@ -1,17 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
-import { SearchContext } from "../context";
+import SearchContext from "../SearchContext";
 import styled from "styled-components";
-import { ButtonPrimary } from "./primitives/ButtonPrimary";
-import {
-  BREAK_POINTS as bp,
-  ROUND_CORNERS as rc,
-  ANIMATION_TIME as at,
-  COLORS as cl,
-} from "../constants";
-import { SearchIcon } from "./primitives/Icons";
-import CardBg from "./primitives/CardBackground";
-import { GitHubUser } from "../types";
-import { getUserData } from "../utils/api";
+import Button from "../Button";
+import { ROUND_CORNERS, COLORS, QUERIES } from "../../utils/constants";
+import Icons from "../Icons";
+import Card from "../Card";
+import { GitHubUser } from "../../utils/types";
+import { getUserData } from "../../utils/api";
+import VisuallyHidden from "../VisuallyHidden";
 
 export default function SearchBar() {
   const [inputValue, setInputValue] = useState("");
@@ -46,7 +42,7 @@ export default function SearchBar() {
     <Wrapper>
       <Form role="search" onSubmit={onSubmitHandler}>
         <Label>
-          <span className="sr-only">Search GitHub username</span>
+          <VisuallyHidden>Search GitHub username</VisuallyHidden>
           <IconWrapper>
             <SearchIcon />
           </IconWrapper>
@@ -59,16 +55,16 @@ export default function SearchBar() {
           />
           {isError ? <Error>No Results</Error> : null}
         </Label>
-        <ButtonPrimary type="submit">Search</ButtonPrimary>
+        <Button type="submit">Search</Button>
       </Form>
     </Wrapper>
   );
 }
 
-const Wrapper = styled(CardBg)`
+const Wrapper = styled(Card)`
   padding: 8px;
 
-  @media (min-width: ${bp.tablet}) {
+  @media ${QUERIES.tabletAndUp} {
     padding: 9.5px 10px;
   }
 `;
@@ -78,7 +74,7 @@ const Form = styled.form`
   align-items: center;
   gap: 8px;
 
-  @media (min-width: ${bp.tablet}) {
+  @media ${QUERIES.tabletAndUp} {
     gap: 16px;
   }
 `;
@@ -88,7 +84,7 @@ const Label = styled.label`
   flex-grow: 1;
   padding-inline-start: 8px;
 
-  @media (min-width: ${bp.tablet}) {
+  @media ${QUERIES.tabletAndUp} {
     padding-inline-start: 32px;
   }
 `;
@@ -100,7 +96,7 @@ const Input = styled.input`
   font-size: 0.8125rem;
 
   border: none;
-  border-radius: ${rc.rc050};
+  border-radius: ${ROUND_CORNERS.small};
   outline-offset: 4px;
   background-color: transparent;
 
@@ -118,7 +114,7 @@ const Input = styled.input`
     outline: 2px solid var(--clr-accent);
   }
 
-  @media (min-width: ${bp.tablet}) {
+  @media ${QUERIES.tabletAndUp} {
     font-size: 1.125rem;
     padding-inline-start: 44px;
   }
@@ -132,11 +128,13 @@ const IconWrapper = styled.div`
   height: 20px;
   margin: auto 0;
 
-  @media (min-width: ${bp.tablet}) {
+  @media ${QUERIES.tabletAndUp} {
     width: 24px;
     height: 24px;
   }
 `;
+
+const SearchIcon = styled(Icons.Search)``;
 
 const Error = styled.span`
   position: absolute;
@@ -146,10 +144,10 @@ const Error = styled.span`
 
   font-weight: 700;
   font-size: 0.8125rem;
-  color: ${cl.error};
+  color: ${COLORS.error};
   pointer-events: none;
 
-  @media (min-width: ${bp.tablet}) {
+  @media ${QUERIES.tabletAndUp} {
     font-size: 1.125rem;
   }
 `;

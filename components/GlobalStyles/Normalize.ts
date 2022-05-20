@@ -29,7 +29,7 @@ const StyledNormalize = css`
   5. Improve text rendering
 */
   body {
-    line-height: 1.5;
+    line-height: 1.5rem;
     -webkit-font-smoothing: antialiased;
   }
   /*
@@ -70,6 +70,27 @@ const StyledNormalize = css`
   #root,
   #__next {
     isolation: isolate;
+  }
+
+  /*
+  Remove default button styles. We'll provide our own at the
+  component level
+*/
+  button {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 `;
 export default StyledNormalize;

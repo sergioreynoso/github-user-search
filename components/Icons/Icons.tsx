@@ -1,4 +1,4 @@
-export const SearchIcon = ({ className }: { className?: string }) => (
+const Search = ({ className }: { className?: string }) => (
   <svg
     width="100%"
     height="100%"
@@ -12,7 +12,7 @@ export const SearchIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export const MoonIcon = ({ className }: { className?: string }) => (
+const Moon = ({ className }: { className?: string }) => (
   <svg
     width={20}
     height={20}
@@ -23,7 +23,7 @@ export const MoonIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export const SunIcon = ({ className }: { className?: string }) => (
+const Sun = ({ className }: { className?: string }) => (
   <svg
     width={20}
     height={20}
@@ -34,7 +34,7 @@ export const SunIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export const Location = ({ className }: { className?: string }) => (
+const Location = ({ className }: { className?: string }) => (
   <svg
     width={20}
     height={20}
@@ -44,7 +44,7 @@ export const Location = ({ className }: { className?: string }) => (
     <path d="M12.797 3.425C11.584 1.33 9.427.05 7.03.002a7.483 7.483 0 00-.308 0C4.325.05 2.17 1.33.955 3.425a6.963 6.963 0 00-.09 6.88l4.959 9.077.007.012c.218.38.609.606 1.045.606.437 0 .828-.226 1.046-.606l.007-.012 4.96-9.077a6.963 6.963 0 00-.092-6.88zm-5.92 5.638c-1.552 0-2.813-1.262-2.813-2.813s1.261-2.812 2.812-2.812S9.69 4.699 9.69 6.25 8.427 9.063 6.876 9.063z" />
   </svg>
 );
-export const Twitter = ({ className }: { className?: string }) => (
+const Twitter = ({ className }: { className?: string }) => (
   <svg
     width={20}
     height={20}
@@ -54,7 +54,7 @@ export const Twitter = ({ className }: { className?: string }) => (
     <path d="M20 2.799a8.549 8.549 0 01-2.363.647 4.077 4.077 0 001.804-2.266 8.194 8.194 0 01-2.6.993A4.099 4.099 0 009.75 4.977c0 .324.027.637.095.934-3.409-.166-6.425-1.8-8.452-4.288a4.128 4.128 0 00-.56 2.072c0 1.42.73 2.679 1.82 3.408A4.05 4.05 0 01.8 6.598v.045a4.119 4.119 0 003.285 4.028 4.092 4.092 0 01-1.075.135c-.263 0-.528-.015-.776-.07.531 1.624 2.038 2.818 3.831 2.857A8.239 8.239 0 01.981 15.34 7.68 7.68 0 010 15.285a11.543 11.543 0 006.29 1.84c7.545 0 11.67-6.25 11.67-11.667 0-.182-.006-.357-.015-.53A8.18 8.18 0 0020 2.798z" />
   </svg>
 );
-export const Link = ({ className }: { className?: string }) => (
+const Link = ({ className }: { className?: string }) => (
   <svg
     width={20}
     height={20}
@@ -68,7 +68,7 @@ export const Link = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export const Company = ({ className }: { className?: string }) => (
+const Company = ({ className }: { className?: string }) => (
   <svg
     width={20}
     height={20}
@@ -80,3 +80,15 @@ export const Company = ({ className }: { className?: string }) => (
     </g>
   </svg>
 );
+
+const Icons = {
+  Moon,
+  Sun,
+  Search,
+  Link,
+  Company,
+  Twitter,
+  Location,
+};
+
+export default Icons;

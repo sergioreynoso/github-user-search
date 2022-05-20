@@ -1,13 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  BREAK_POINTS as bp,
-  ANIMATION_TIME as at,
-  COLORS as cl,
-  ROUND_CORNERS as rc,
-  FONT_SIZES as fs,
-} from "../../constants";
-import { Company, Link, Location, Twitter } from "../primitives/Icons";
+import { ANIMATION_TIME, QUERIES } from "../../utils/constants";
+import Icons from "../Icons";
 
 export default function Meta({
   location,
@@ -20,36 +14,50 @@ export default function Meta({
   blog: string;
   company: string;
 }) {
-  const validateItem = (item: string | null) => {
+  const validateItemLabel = (item: string | null): string => {
     return item ? item : "Not Available";
   };
 
   return (
     <MetaWrapper>
       <List>
-        <ListItem>
+        <ListItem isValid={location}>
           <IconWrapper>
-            <LocationIcon />
+            <Location />
           </IconWrapper>
-          <Label>{validateItem(location)}</Label>
+          <Label>{validateItemLabel(location)}</Label>
         </ListItem>
-        <ListItem>
+        <ListItem isValid={twitterUsername}>
           <IconWrapper>
-            <TwitterIcon />
+            <Twitter />
           </IconWrapper>
-          <Label>{validateItem(twitterUsername)}</Label>
+          <Label>{validateItemLabel(twitterUsername)}</Label>
         </ListItem>
-        <ListItem>
+        <ListItem isValid={location}>
           <IconWrapper>
-            <LinkIcon />
+            <Link />
           </IconWrapper>
-          <Label>{validateItem(blog)}</Label>
+          <Label>
+            {blog ? (
+              <LinkWrapper
+                href={validateItemLabel(blog)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {validateItemLabel(blog)
+                  .replace("https://", "")
+                  .replace("www.", "")}
+              </LinkWrapper>
+            ) : (
+              validateItemLabel(blog)
+            )}
+          </Label>
         </ListItem>
-        <ListItem>
+        <ListItem isValid={company}>
           <IconWrapper>
-            <CompanyIcon />
+            <Company />
           </IconWrapper>
-          <Label>{validateItem(company)}</Label>
+          <Label>{validateItemLabel(company)}</Label>
         </ListItem>
       </List>
     </MetaWrapper>
@@ -64,48 +72,55 @@ const List = styled.ul`
   gap: 16px 0;
   list-style: none;
 
-  @media (min-width: ${bp.desktop}) {
+  @media ${QUERIES.tabletAndUp} {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px 48px;
   }
 `;
 
-const ListItem = styled.li`
+const ListItem = styled.li<{ isValid: string | null }>`
   display: flex;
   align-items: center;
   gap: 16px;
+  opacity: ${props => (props.isValid ? 1 : 0.5)};
 `;
 
 const IconWrapper = styled.div`
-  width: 20px;
-  height: 20px;
+  flex-basis: 20px;
 `;
 
 const Label = styled.span`
-  max-width: 200px;
+  display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  transition: color ${at.med};
+  transition: color ${ANIMATION_TIME.med};
 `;
 
-const LocationIcon = styled(Location)`
+const LinkWrapper = styled.a`
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const Location = styled(Icons.Location)`
   fill: var(--clr-body);
   margin-left: 3.5px;
-  transition: fill ${at.med};
+  transition: fill ${ANIMATION_TIME.med};
 `;
 
-const TwitterIcon = styled(Twitter)`
+const Twitter = styled(Icons.Twitter)`
   fill: var(--clr-body);
-  transition: fill ${at.med};
+  transition: fill ${ANIMATION_TIME.med};
 `;
 
-const LinkIcon = styled(Link)`
+const Link = styled(Icons.Link)`
   fill: var(--clr-body);
-  transition: fill ${at.med};
+  transition: fill ${ANIMATION_TIME.med};
 `;
 
-const CompanyIcon = styled(Company)`
+const Company = styled(Icons.Company)`
   fill: var(--clr-body);
-  transition: fill ${at.med};
+  transition: fill ${ANIMATION_TIME.med};
 `;

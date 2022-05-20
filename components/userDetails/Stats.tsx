@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  BREAK_POINTS as bp,
-  ANIMATION_TIME as at,
-  COLORS as cl,
-  ROUND_CORNERS as rc,
-  FONT_SIZES as fs,
-} from "../../constants";
+  ANIMATION_TIME,
+  ROUND_CORNERS,
+  FONT_SIZE,
+  QUERIES,
+  WEIGHTS,
+  COLORS,
+} from "../../utils/constants";
 
 export default function Stats({
   publicRepos,
@@ -18,69 +19,60 @@ export default function Stats({
   following: number;
 }) {
   return (
-    <StatsWrapper>
-      <Table>
-        <thead>
-          <TableRow>
-            <TableHeader>Repos</TableHeader>
-            <TableHeader>Followers</TableHeader>
-            <TableHeader>Following</TableHeader>
-          </TableRow>
-        </thead>
-        <tbody>
-          <TableRow>
-            <TableCell>{publicRepos}</TableCell>
-            <TableCell>{followers}</TableCell>
-            <TableCell>{following}</TableCell>
-          </TableRow>
-        </tbody>
-      </Table>
-    </StatsWrapper>
+    <Wrapper>
+      <Item>
+        <Heading>Repos</Heading>
+        <Stat>{publicRepos}</Stat>
+      </Item>
+      <Item>
+        <Heading>Followers</Heading>
+        <Stat>{followers}</Stat>
+      </Item>
+      <Item>
+        <Heading>Following</Heading>
+        <Stat>{following}</Stat>
+      </Item>
+    </Wrapper>
   );
 }
 
-export const StatsWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
-  background-color: var(--clr-bg);
-  border-radius: ${rc.rc050};
+  gap: 8px;
   padding: 15px 15px;
-  transition: background-color ${at.med};
+  background-color: var(--clr-bg);
+  border-radius: ${ROUND_CORNERS.med};
+  transition: background-color ${ANIMATION_TIME.med};
 
-  @media (min-width: ${bp.desktop}) {
+  @media ${QUERIES.tabletAndUp} {
     padding: 15px 32px;
   }
 `;
 
-const Table = styled.table`
+const Item = styled.div`
   flex: 1;
-  text-align: left;
 `;
 
-const TableHeader = styled.th`
-  font-size: ${fs.fs040};
-  font-weight: 400;
-  @media (min-width: ${bp.desktop}) {
-    font-size: ${fs.fs050};
+const Heading = styled.h3`
+  font-size: ${FONT_SIZE[40]};
+  font-weight: ${WEIGHTS.normal};
+  text-align: center;
+  color: var(--clr-body);
+  margin-bottom: 5px;
+  @media ${QUERIES.tabletAndUp} {
+    font-size: ${FONT_SIZE[50]};
+    text-align: left;
   }
 `;
 
-const TableRow = styled.tr`
-  display: grid;
-  justify-items: center;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  @media (min-width: ${bp.desktop}) {
-    justify-items: initial;
-    gap: 0;
-  }
-`;
-
-const TableCell = styled.td`
-  font-size: ${fs.fs200};
-  font-weight: 700;
-  padding-block-start: 4px;
-
-  @media (min-width: ${bp.desktop}) {
-    font-size: ${fs.fs300};
+const Stat = styled.span`
+  display: block;
+  font-size: ${FONT_SIZE[200]};
+  font-weight: ${WEIGHTS.bold};
+  text-align: center;
+  color: var(--clr-heading);
+  @media ${QUERIES.tabletAndUp} {
+    font-size: ${FONT_SIZE[300]};
+    text-align: left;
   }
 `;

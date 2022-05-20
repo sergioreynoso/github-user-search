@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { ANIMATION_TIME as at, ROUND_CORNERS as rc } from "../../constants";
+import {
+  ANIMATION_TIME as at,
+  ROUND_CORNERS as rc,
+} from "../../utils/constants";
 import { useTheme } from "next-themes";
-import { MoonIcon as Moon, SunIcon as Sun } from "./Icons";
+import Icons from "../Icons";
 
 export default function DarkModeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -42,7 +45,7 @@ const IconWrapper = styled.div`
   height: 20px;
 `;
 
-const MoonIcon = styled(Moon)`
+const MoonIcon = styled(Icons.Moon)`
   position: absolute;
   top: 0;
   left: 0;
@@ -53,7 +56,7 @@ const MoonIcon = styled(Moon)`
     fill ${at.fast} linear;
 `;
 
-const SunIcon = styled(Sun)`
+const SunIcon = styled(Icons.Sun)`
   position: absolute;
   top: 0;
   left: 0;

@@ -5,7 +5,7 @@ interface Time {
   year: string;
 }
 
-export const getDate = (data: Date): Time => {
+export const formatDate = (data: Date): Time => {
   const [day, month, dayNum, year] = new Date(data).toDateString().split(" ");
   return { day, month, dayNum, year };
 };
