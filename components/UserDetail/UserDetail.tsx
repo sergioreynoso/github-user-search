@@ -8,7 +8,7 @@ import { formatDate } from "../../utils/helpers";
 import Stats from "./Stats";
 import Meta from "./Meta";
 
-export default function ProfileCard() {
+export default function UserDetail() {
   const appContenxt = useContext(SearchContext);
   if (!appContenxt) return null;
   const { userData } = appContenxt;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Head from "next/head";
 import Header from "../components/Header";
-import UserDetail from "../components/UserDetails";
+import UserDetail from "../components/UserDetail";
 import SearchBar from "../components/SearchBar";
 import SearchContext from "../components/SearchContext";
 import { getUserData } from "../utils/api";
