@@ -47,7 +47,7 @@ export default function SearchBar() {
             <SearchIcon />
           </IconWrapper>
           <Input
-            type="search"
+            type="text"
             placeholder="Search GitHub username"
             value={inputValue}
             onChange={onChangeHandler}
