@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { ANIMATION_TIME, ROUND_CORNERS } from "../../utils/constants";
+import {
+  ANIMATION_TIME,
+  QUERIES,
+  ROUND_CORNERS,
+  WEIGHTS,
+} from "../../utils/constants";
 import { useTheme } from "next-themes";
 import Icons from "../Icons";
 
@@ -29,7 +34,8 @@ export default function DarkModeToggle() {
 
 const Label = styled.span`
   text-transform: uppercase;
-  font-weight: 700;
+  font-size: 0.8125rem;
+  font-weight: ${WEIGHTS.bold};
   letter-spacing: 2.5px;
   color: var(--clr-dark-mode-toggle);
   transition: all ${ANIMATION_TIME.fast};

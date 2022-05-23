@@ -13,6 +13,7 @@ export default function Header() {
 }
 
 const Heading = styled.h1`
+  display: block;
   font-size: ${FONT_SIZE[400]};
   line-height: ${LINE_HEIGHT[400]};
 `;

@@ -58,7 +58,7 @@ export const LINE_HEIGHT = {
   100: `1.5rem`,
   200: `1.5625rem`,
   300: `2.0625rem`,
-  400: `2.375rem`,
+  400: `2.4375rem`,
 };
 
 export const ROUND_CORNERS = {

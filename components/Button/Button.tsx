@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { QUERIES, ROUND_CORNERS } from "../../utils/constants";
+import { QUERIES, ROUND_CORNERS, WEIGHTS } from "../../utils/constants";
 
 const Button = styled.button`
-  padding: 12.5px 14px;
+  padding: 12.5px 16px;
   border: none;
   outline: none;
-  font-weight: 700;
+  font-size: 0.875rem;
+  font-weight: ${WEIGHTS.bold};
 
   color: var(--clr-primary-button-text);
   background-color: var(--clr-primary-button);
@@ -13,8 +14,10 @@ const Button = styled.button`
 
   cursor: pointer;
 
-  &:hover {
-    opacity: 80%;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 80%;
+    }
   }
 
   &:focus-visible {
@@ -24,6 +27,7 @@ const Button = styled.button`
   }
 
   @media ${QUERIES.tabletAndUp} {
+    font-size: 1rem;
     padding: 12.5px 24px;
   }
 `;

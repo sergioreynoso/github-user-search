@@ -62,7 +62,7 @@ export default function SearchBar() {
 }
 
 const Wrapper = styled(Card)`
-  padding: 8px;
+  padding: 6.5px 7px;
 
   @media ${QUERIES.tabletAndUp} {
     padding: 9.5px 10px;

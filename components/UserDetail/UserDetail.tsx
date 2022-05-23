@@ -41,7 +41,7 @@ export default function UserDetail() {
         <JoinedDate>{`Joined ${dayNum} ${month} ${year}`}</JoinedDate>
       </TitleWrapper>
       <Details>
-        <Bio>{bio}</Bio>
+        <Bio>{bio ? bio : "This profile has no bio."}</Bio>
         <Stats
           publicRepos={public_repos}
           followers={followers}
@@ -60,13 +60,15 @@ export default function UserDetail() {
 const Wrapper = styled(Card)`
   display: grid;
   grid-template-columns: min-content 1fr;
-  gap: 24px 37px;
-  padding: 24px;
+  gap: 33px 19px;
+  padding-block-start: 32px;
+  padding-block-end: 48px;
   color: var(--clr-body);
 
   @media ${QUERIES.tabletOnly} {
     width: 573px;
     padding: 40px;
+    gap: 24px 41px;
   }
 
   @media ${QUERIES.laptopAndUp} {
@@ -91,7 +93,6 @@ const AvatarWrapper = styled.div`
 
 const TitleWrapper = styled.div`
   display: grid;
-  gap: 8px 0;
 
   @media ${QUERIES.tabletAndUp} {
     padding: 13px 0;
@@ -105,17 +106,34 @@ const TitleWrapper = styled.div`
 `;
 
 const Name = styled.h2`
+  font-size: 1rem;
   line-height: 1;
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 1.625rem;
+  }
+
   @media ${QUERIES.laptopAndUp} {
     align-self: center;
   }
 `;
 
 const Login = styled.p`
+  font-size: 0.8125rem;
   color: var(--clr-accent);
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 1rem;
+  }
 `;
 
 const JoinedDate = styled.p`
+  font-size: 0.8125rem;
+
+  @media ${QUERIES.tabletAndUp} {
+    font-size: 0.9375rem;
+  }
+
   @media ${QUERIES.laptopAndUp} {
     grid-row: 1 /2;
     grid-column: 2 / 3;
@@ -139,7 +157,9 @@ const Details = styled.div`
 `;
 
 const Bio = styled.p`
+  font-size: 0.8125rem;
   transition: color ${ANIMATION_TIME.med};
+
   @media ${QUERIES.tabletAndUp} {
     font-size: ${FONT_SIZE[100]};
   }

@@ -36,9 +36,10 @@ const GlobalStyles = createGlobalStyle`
   #__next { 
     display: flex;
     justify-content: center;
+
     height: 100%;
     padding:24px;
-    padding-block-start: clamp(24px,10vw + 1px,144px);
+    padding-block-start: clamp(30px,6vw + 1px,144px);
     background-color: var(--clr-bg);
     transition: background-color ${ANIMATION_TIME.med} ease-in-out;
   }

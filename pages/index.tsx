@@ -8,7 +8,7 @@ import SearchBar from "../components/SearchBar";
 import SearchContext from "../components/SearchContext";
 import { getUserData } from "../utils/api";
 import { GitHubUser } from "../utils/types";
-import { APP_NAME, USERNAME_ONLOAD } from "../utils/constants";
+import { APP_NAME, QUERIES, USERNAME_ONLOAD } from "../utils/constants";
 
 export const getStaticProps: GetStaticProps = async () => {
   const data: GitHubUser = await getUserData(USERNAME_ONLOAD);
@@ -42,14 +42,19 @@ const Home: NextPage<{ data: GitHubUser }> = ({ data }) => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 36px;
   max-width: 730px;
+  min-width: 327px;
 `;
 
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
+
+  @media ${QUERIES.tabletAndUp} {
+    gap: 24px;
+  }
 `;
 
 export default Home;
