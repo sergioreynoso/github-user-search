@@ -27,7 +27,7 @@ export default function UserDetail() {
     company,
   } = userData;
   const { dayNum, month, year } = formatDate(created_at);
-  console.log(userData);
+  // console.log(userData);
 
   return (
     <Wrapper>

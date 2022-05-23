@@ -6,7 +6,9 @@ import Icons from "../Icons";
 
 export default function DarkModeToggle() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme("light");
+  const { theme, setTheme, resolvedTheme } = useTheme();
+
+  console.log(useTheme());
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
@@ -20,8 +22,8 @@ export default function DarkModeToggle() {
     <ToggleButton onClick={onClickHandler}>
       <Label>{theme === "light" ? "dark" : "light"}</Label>
       <IconWrapper>
-        <MoonIcon theme={theme} />
-        <SunIcon theme={theme} />
+        <MoonIcon theme={resolvedTheme} />
+        <SunIcon theme={resolvedTheme} />
       </IconWrapper>
     </ToggleButton>
   );
