@@ -72,10 +72,10 @@ const Wrapper = styled(Card)`
 const Form = styled.form`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 
   @media ${QUERIES.tabletAndUp} {
-    gap: 16px;
+    gap: 32px;
   }
 `;
 
@@ -96,8 +96,10 @@ const Input = styled.input`
   font-size: 0.8125rem;
 
   border: none;
+  -webkit-border-radius: ${ROUND_CORNERS.small};
+
   border-radius: ${ROUND_CORNERS.small};
-  outline-offset: 4px;
+  outline-offset: 2px;
   background-color: transparent;
 
   overflow: hidden;
@@ -117,18 +119,22 @@ const Input = styled.input`
   @media ${QUERIES.tabletAndUp} {
     font-size: 1.125rem;
     padding-inline-start: 44px;
+    outline-offset: 6px;
   }
 `;
 
 const IconWrapper = styled.div`
   position: absolute;
-  top: 0;
+  top: 1px;
+  left: 10px;
   bottom: 0;
   width: 20px;
   height: 20px;
   margin: auto 0;
 
   @media ${QUERIES.tabletAndUp} {
+    top: 0;
+    left: 34px;
     width: 24px;
     height: 24px;
   }
