@@ -18,6 +18,8 @@ export default function Meta({
     return item ? item : "Not Available";
   };
 
+  console.log(blog);
+
   return (
     <MetaWrapper>
       <List>
@@ -33,7 +35,7 @@ export default function Meta({
           </IconWrapper>
           <Label>{validateItemLabel(twitterUsername)}</Label>
         </ListItem>
-        <ListItem isValid={location}>
+        <ListItem isValid={blog}>
           <IconWrapper>
             <LinkIcon />
           </IconWrapper>
@@ -46,11 +48,12 @@ export default function Meta({
               tabIndex={0}
             >
               {validateItemLabel(blog)
+                .replace("http://", "")
                 .replace("https://", "")
                 .replace("www.", "")}
             </LinkWrapper>
           ) : (
-            <Label> validateItemLabel(blog)</Label>
+            <Label>{validateItemLabel(blog)}</Label>
           )}
         </ListItem>
         <ListItem isValid={company}>
@@ -99,6 +102,10 @@ const Label = styled.span`
 `;
 
 const LinkWrapper = styled.a`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   border-radius: ${ROUND_CORNERS.small};
   @media (hover: hover) and (pointer: fine) {
     cursor: pointer;
