@@ -43,7 +43,7 @@ export default function Meta({
                 href={validateItemLabel(blog)}
                 target="_blank"
                 rel="noopener noreferrer"
-                tabIndex={4}
+                tabIndex={0}
               >
                 {validateItemLabel(blog)
                   .replace("https://", "")
