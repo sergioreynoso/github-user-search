@@ -23,19 +23,19 @@ export default function Meta({
       <List>
         <ListItem isValid={location}>
           <IconWrapper>
-            <Location />
+            <LocationIcon />
           </IconWrapper>
           <Label>{validateItemLabel(location)}</Label>
         </ListItem>
         <ListItem isValid={twitterUsername}>
           <IconWrapper>
-            <Twitter />
+            <TwitterIcon />
           </IconWrapper>
           <Label>{validateItemLabel(twitterUsername)}</Label>
         </ListItem>
         <ListItem isValid={location}>
           <IconWrapper>
-            <Link />
+            <LinkIcon />
           </IconWrapper>
           <Label>
             {blog ? (
@@ -43,6 +43,7 @@ export default function Meta({
                 href={validateItemLabel(blog)}
                 target="_blank"
                 rel="noopener noreferrer"
+                tabIndex={4}
               >
                 {validateItemLabel(blog)
                   .replace("https://", "")
@@ -55,7 +56,7 @@ export default function Meta({
         </ListItem>
         <ListItem isValid={company}>
           <IconWrapper>
-            <Company />
+            <CompanyIcon />
           </IconWrapper>
           <Label>{validateItemLabel(company)}</Label>
         </ListItem>
@@ -83,6 +84,7 @@ const ListItem = styled.li<{ isValid: string | null }>`
   align-items: center;
   gap: 16px;
   opacity: ${props => (props.isValid ? 1 : 0.5)};
+  will-change: transform;
 `;
 
 const IconWrapper = styled.div`
@@ -98,29 +100,33 @@ const Label = styled.span`
 `;
 
 const LinkWrapper = styled.a`
-  cursor: pointer;
-  &:hover {
-    text-decoration: underline;
+  outline-color: var(--clr-accent);
+  outline-offset: 4px;
+  @media (hover: hover) and (pointer: fine) {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
-const Location = styled(Icons.Location)`
+const LocationIcon = styled(Icons.Location)`
   fill: var(--clr-body);
   margin-left: 3.5px;
   transition: fill ${ANIMATION_TIME.med};
 `;
 
-const Twitter = styled(Icons.Twitter)`
+const TwitterIcon = styled(Icons.Twitter)`
   fill: var(--clr-body);
   transition: fill ${ANIMATION_TIME.med};
 `;
 
-const Link = styled(Icons.Link)`
+const LinkIcon = styled(Icons.Link)`
   fill: var(--clr-body);
   transition: fill ${ANIMATION_TIME.med};
 `;
 
-const Company = styled(Icons.Company)`
+const CompanyIcon = styled(Icons.Company)`
   fill: var(--clr-body);
   transition: fill ${ANIMATION_TIME.med};
 `;
