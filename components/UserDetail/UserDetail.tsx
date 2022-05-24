@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import SearchContext from "../SearchContext";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Card from "../Card";
 import { ANIMATION_TIME, FONT_SIZE, QUERIES } from "../../utils/constants";
 import Image from "next/image";
@@ -32,8 +32,8 @@ export default function UserDetail() {
 
   return (
     <Wrapper>
-      <AvatarWrapper>
-        <Image src={avatar_url} layout="fill" alt="Avatar image" priority />
+      <AvatarWrapper key={avatar_url}>
+        <Image src={avatar_url} layout="fill" alt="Profile avatar" priority />
       </AvatarWrapper>
       <TitleWrapper>
         <Name>{name}</Name>
@@ -57,6 +57,17 @@ export default function UserDetail() {
     </Wrapper>
   );
 }
+
+const FadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+
+`;
+
 const Wrapper = styled(Card)`
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -64,6 +75,11 @@ const Wrapper = styled(Card)`
   padding-block-start: 32px;
   padding-block-end: 48px;
   color: var(--clr-body);
+
+  animation: ${FadeIn} 500ms ease-out;
+  animation-delay: 250ms;
+  animation-fill-mode: both;
+  will-change: transform;
 
   @media ${QUERIES.tabletOnly} {
     width: 573px;
@@ -85,6 +101,11 @@ const AvatarWrapper = styled.div`
   overflow: hidden;
   background-color: var(--clr-bg);
 
+  animation: ${FadeIn} 500ms ease-out;
+  animation-delay: 250ms;
+  animation-fill-mode: both;
+  will-change: transform;
+
   @media ${QUERIES.tabletAndUp} {
     width: 117px;
     height: 117px;
@@ -101,6 +122,7 @@ const TitleWrapper = styled.div`
   @media ${QUERIES.laptopAndUp} {
     align-self: flex-start;
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
     padding: 0;
   }
 `;
