@@ -74,7 +74,9 @@ const Wrapper = styled(Card)`
 
   @media ${QUERIES.laptopAndUp} {
     width: 730px;
-    padding: 48px;
+    padding-block-start: 48px;
+    padding-block-end: 44px;
+    padding-inline: 48px;
     gap: 37px 41px;
   }
 `;
@@ -156,7 +158,7 @@ const Details = styled.div`
   ${FadeInAnimation({ timing: "500ms", delay: "700ms" })}
 
   @media ${QUERIES.laptopAndUp} {
-    gap: 40px;
+    gap: 32px;
     margin-top: -72px;
     grid-column: 2 / 3;
   }
