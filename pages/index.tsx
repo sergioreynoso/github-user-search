@@ -46,14 +46,13 @@ const Wrapper = styled.div`
   gap: 36px;
   max-width: 730px;
   min-width: 327px;
+  ${FadeInAnimation({ timing: "500ms", delay: "200ms" })}
 `;
 
 const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: 16px;
-
-  ${FadeInAnimation({ timing: "500ms", delay: "250ms" })}
 
   @media ${QUERIES.tabletAndUp} {
     gap: 24px;

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import DarkModeToggle from "../Toggle";
 import { FONT_SIZE, LINE_HEIGHT } from "../../utils/constants";
+import { FadeInAnimation } from "../../utils/animations";
 
 export default function Header() {
   return (
