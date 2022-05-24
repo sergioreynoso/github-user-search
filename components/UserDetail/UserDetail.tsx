@@ -173,7 +173,7 @@ const Details = styled.div`
 
   @media ${QUERIES.laptopAndUp} {
     gap: 40px;
-    margin-top: -64px;
+    margin-top: -72px;
     grid-column: 2 / 3;
   }
 `;
