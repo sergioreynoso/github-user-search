@@ -9,6 +9,7 @@ import SearchContext from "../components/SearchContext";
 import { getUserData } from "../utils/api";
 import { GitHubUser } from "../utils/types";
 import { APP_NAME, QUERIES, USERNAME_ONLOAD } from "../utils/constants";
+import { FadeInAnimation } from "../utils/animations";
 
 export const getStaticProps: GetStaticProps = async () => {
   const data: GitHubUser = await getUserData(USERNAME_ONLOAD);
@@ -51,6 +52,8 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  ${FadeInAnimation({ timing: "500ms", delay: "250ms" })}
 
   @media ${QUERIES.tabletAndUp} {
     gap: 24px;

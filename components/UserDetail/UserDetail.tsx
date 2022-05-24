@@ -1,13 +1,13 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import SearchContext from "../SearchContext";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import Card from "../Card";
 import { ANIMATION_TIME, FONT_SIZE, QUERIES } from "../../utils/constants";
 import Image from "next/image";
 import { formatDate } from "../../utils/helpers";
 import Stats from "./Stats";
 import Meta from "./Meta";
-import blurImg from "../../public/images/blur.png";
+import { FadeInAnimation } from "../../utils/animations";
 
 export default function UserDetail() {
   const appContenxt = useContext(SearchContext);
@@ -35,12 +35,12 @@ export default function UserDetail() {
       <AvatarWrapper key={avatar_url}>
         <Image src={avatar_url} layout="fill" alt="Profile avatar" priority />
       </AvatarWrapper>
-      <TitleWrapper>
+      <TitleWrapper key={name}>
         <Name>{name}</Name>
         <Login>@{login}</Login>
         <JoinedDate>{`Joined ${dayNum} ${month} ${year}`}</JoinedDate>
       </TitleWrapper>
-      <Details>
+      <Details key={bio}>
         <Bio>{bio ? bio : "This profile has no bio."}</Bio>
         <Stats
           publicRepos={public_repos}
@@ -58,16 +58,6 @@ export default function UserDetail() {
   );
 }
 
-const FadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
-
-`;
-
 const Wrapper = styled(Card)`
   display: grid;
   grid-template-columns: min-content 1fr;
@@ -75,11 +65,6 @@ const Wrapper = styled(Card)`
   padding-block-start: 32px;
   padding-block-end: 48px;
   color: var(--clr-body);
-
-  animation: ${FadeIn} 500ms ease-out;
-  animation-delay: 250ms;
-  animation-fill-mode: both;
-  will-change: transform;
 
   @media ${QUERIES.tabletOnly} {
     width: 573px;
@@ -100,11 +85,7 @@ const AvatarWrapper = styled.div`
   border-radius: 50%;
   overflow: hidden;
   background-color: var(--clr-bg);
-
-  animation: ${FadeIn} 500ms ease-out;
-  animation-delay: 250ms;
-  animation-fill-mode: both;
-  will-change: transform;
+  ${FadeInAnimation({ timing: "500ms", delay: "250ms" })}
 
   @media ${QUERIES.tabletAndUp} {
     width: 117px;
@@ -114,6 +95,7 @@ const AvatarWrapper = styled.div`
 
 const TitleWrapper = styled.div`
   display: grid;
+  ${FadeInAnimation({ timing: "500ms", delay: "500ms" })}
 
   @media ${QUERIES.tabletAndUp} {
     padding: 13px 0;
@@ -170,6 +152,7 @@ const Details = styled.div`
   flex-direction: column;
   gap: 24px;
   max-width: 100%;
+  ${FadeInAnimation({ timing: "500ms", delay: "700ms" })}
 
   @media ${QUERIES.laptopAndUp} {
     gap: 40px;
