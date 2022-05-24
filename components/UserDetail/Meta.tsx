@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ANIMATION_TIME, QUERIES } from "../../utils/constants";
+import { ANIMATION_TIME, QUERIES, ROUND_CORNERS } from "../../utils/constants";
 import Icons from "../Icons";
 
 export default function Meta({
@@ -37,22 +37,21 @@ export default function Meta({
           <IconWrapper>
             <LinkIcon />
           </IconWrapper>
-          <Label>
-            {blog ? (
-              <LinkWrapper
-                href={validateItemLabel(blog)}
-                target="_blank"
-                rel="noopener noreferrer"
-                tabIndex={0}
-              >
-                {validateItemLabel(blog)
-                  .replace("https://", "")
-                  .replace("www.", "")}
-              </LinkWrapper>
-            ) : (
-              validateItemLabel(blog)
-            )}
-          </Label>
+
+          {blog ? (
+            <LinkWrapper
+              href={validateItemLabel(blog)}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={0}
+            >
+              {validateItemLabel(blog)
+                .replace("https://", "")
+                .replace("www.", "")}
+            </LinkWrapper>
+          ) : (
+            <Label> validateItemLabel(blog)</Label>
+          )}
         </ListItem>
         <ListItem isValid={company}>
           <IconWrapper>
@@ -100,12 +99,15 @@ const Label = styled.span`
 `;
 
 const LinkWrapper = styled.a`
-  outline-color: var(--clr-accent);
-  outline-offset: 4px;
+  border-radius: ${ROUND_CORNERS.small};
   @media (hover: hover) and (pointer: fine) {
     cursor: pointer;
     &:hover {
       text-decoration: underline;
+    }
+    &:focus {
+      outline: 2px solid var(--clr-accent);
+      outline-offset: 4px;
     }
   }
 `;
