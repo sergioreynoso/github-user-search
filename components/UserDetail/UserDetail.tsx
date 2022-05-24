@@ -69,12 +69,13 @@ const Wrapper = styled(Card)`
   @media ${QUERIES.tabletOnly} {
     width: 573px;
     padding: 40px;
-    gap: 24px 41px;
+    gap: 41px 41px;
   }
 
   @media ${QUERIES.laptopAndUp} {
     width: 730px;
     padding: 48px;
+    gap: 37px 41px;
   }
 `;
 
