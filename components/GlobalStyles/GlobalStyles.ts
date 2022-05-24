@@ -5,6 +5,7 @@ import {
   ANIMATION_TIME,
   FONT_SIZE,
   LINE_HEIGHT,
+  QUERIES,
   WEIGHTS,
 } from "../../utils/constants";
 
@@ -39,9 +40,17 @@ const GlobalStyles = createGlobalStyle`
 
     height: 100%;
     padding:24px;
-    padding-block-start: clamp(30px,6vw + 1px,144px);
+    padding-block-start:30px;
     background-color: var(--clr-bg);
     transition: background-color ${ANIMATION_TIME.med} ease-in-out;
+
+    @media ${QUERIES.tabletAndUp}{
+      padding-block-start:140px;
+    }
+
+    @media ${QUERIES.laptopAndUp}{
+      padding-block-start:144px;
+    }
   }
 `;
 
