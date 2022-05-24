@@ -78,7 +78,7 @@ const ToggleButton = styled.button`
   background-color: transparent;
   outline: none;
   cursor: pointer;
-  border-radius: ${ROUND_CORNERS[50]};
+  border-radius: ${ROUND_CORNERS.small};
 
   &:focus-visible {
     outline: solid 2px var(--clr-accent);
