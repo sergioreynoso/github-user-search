@@ -113,6 +113,9 @@ const TitleWrapper = styled.div`
 `;
 
 const Name = styled.h2`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 1rem;
   line-height: 1;
 
