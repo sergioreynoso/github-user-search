@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import SearchContext from "../SearchContext";
-import styled, { css, keyframes } from "styled-components";
+import styled from "styled-components";
 import Card from "../Card";
 import { ANIMATION_TIME, FONT_SIZE, QUERIES } from "../../utils/constants";
 import Image from "next/image";
@@ -32,15 +32,15 @@ export default function UserDetail() {
 
   return (
     <Wrapper>
-      <AvatarWrapper key={avatar_url}>
+      <AvatarWrapper>
         <Image src={avatar_url} layout="fill" alt="Profile avatar" priority />
       </AvatarWrapper>
-      <TitleWrapper key={name}>
+      <TitleWrapper>
         <Name>{name}</Name>
         <Login>@{login}</Login>
         <JoinedDate>{`Joined ${dayNum} ${month} ${year}`}</JoinedDate>
       </TitleWrapper>
-      <Details key={bio}>
+      <Details>
         <Bio>{bio ? bio : "This profile has no bio."}</Bio>
         <Stats
           publicRepos={public_repos}
