@@ -8,7 +8,6 @@ import { formatDate } from "../../utils/helpers";
 import Stats from "./Stats";
 import Meta from "./Meta";
 import { FadeInAnimation } from "../../utils/animations";
-import ReactCSSTransitionGroup from "react-transition-group";
 
 export default function UserDetail() {
   const appContenxt = useContext(SearchContext);
