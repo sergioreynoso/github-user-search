@@ -22,7 +22,11 @@ export default function DarkModeToggle() {
   };
 
   return (
-    <ToggleButton onClick={onClickHandler}>
+    <ToggleButton
+      onClick={onClickHandler}
+      aria-pressed="false"
+      aria-describedby="dark mode"
+    >
       <Label>{theme === "light" ? "dark" : "light"}</Label>
       <IconWrapper>
         <MoonIcon theme={resolvedTheme} />
