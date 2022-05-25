@@ -17,6 +17,8 @@ export default function SearchBar() {
   if (!appContenxt) return null;
   const { setUserData } = appContenxt;
 
+  console.log("111");
+
   const onChangeHandler = (e: React.FormEvent<HTMLInputElement>) => {
     setInputValue(e.currentTarget.value);
   };
