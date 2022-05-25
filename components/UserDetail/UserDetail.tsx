@@ -8,6 +8,7 @@ import { formatDate } from "../../utils/helpers";
 import Stats from "./Stats";
 import Meta from "./Meta";
 import { FadeInAnimation } from "../../utils/animations";
+import ReactCSSTransitionGroup from "react-transition-group";
 
 export default function UserDetail() {
   const appContenxt = useContext(SearchContext);
@@ -32,7 +33,7 @@ export default function UserDetail() {
 
   return (
     <Wrapper>
-      <AvatarWrapper>
+      <AvatarWrapper key={avatar_url}>
         <Image src={avatar_url} layout="fill" alt="Profile avatar" priority />
       </AvatarWrapper>
       <TitleWrapper>
