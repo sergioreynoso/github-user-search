@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, ChangeEvent, SyntheticEvent } from "react";
 import styled from "styled-components";
 import Button from "../Button";
 import { ROUND_CORNERS, COLORS, QUERIES } from "../../utils/constants";
@@ -11,16 +11,16 @@ import VisuallyHidden from "../VisuallyHidden";
 export default function SearchBar({
   setUserData,
 }: {
-  setUserData: ({}: GitHubUser) => void;
+  setUserData: (data: GitHubUser) => void;
 }) {
   const [inputValue, setInputValue] = useState("");
   const [isError, setIsError] = useState(false);
 
-  const onChangeHandler = (e: React.FormEvent<HTMLInputElement>) => {
+  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.currentTarget.value);
   };
 
-  const onSubmitHandler = (e: React.SyntheticEvent) => {
+  const onSubmitHandler = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!inputValue) return;
     fetchUserData(inputValue);

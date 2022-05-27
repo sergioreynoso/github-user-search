@@ -21,7 +21,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home: NextPage<{ data: GitHubUser }> = ({ data }) => {
   const [userData, setUserData] = useState(data);
-  console.log(userData);
   return (
     <Wrapper>
       <Head>
