@@ -45,6 +45,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Fetch API
+- TypeScript
 - Mobile-first workflow
 
 ### What I learned
