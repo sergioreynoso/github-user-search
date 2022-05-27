@@ -18,8 +18,6 @@ export default function Meta({
     return item ? item : "Not Available";
   };
 
-  console.log(blog);
-
   return (
     <MetaWrapper>
       <List>

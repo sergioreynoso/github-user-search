@@ -5,7 +5,6 @@ import Head from "next/head";
 import Header from "../components/Header";
 import UserDetail from "../components/UserDetail";
 import SearchBar from "../components/SearchBar";
-import SearchContext from "../components/SearchContext";
 import { getUserData } from "../utils/api";
 import { GitHubUser } from "../utils/types";
 import { APP_NAME, QUERIES, USERNAME_ONLOAD } from "../utils/constants";
@@ -22,21 +21,19 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home: NextPage<{ data: GitHubUser }> = ({ data }) => {
   const [userData, setUserData] = useState(data);
+  console.log(userData);
   return (
-    <SearchContext.Provider value={{ userData, setUserData }}>
-      <Wrapper>
-        <Head>
-          <title>{APP_NAME}</title>
-          <meta name="description" content="Search github users" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Header />
-        <Main>
-          <SearchBar />
-          <UserDetail />
-        </Main>
-      </Wrapper>
-    </SearchContext.Provider>
+    <Wrapper>
+      <Head>
+        <title>{APP_NAME}</title>
+        <meta name="description" content="Search github users" />
+      </Head>
+      <Header />
+      <Main>
+        <SearchBar setUserData={setUserData} />
+        <UserDetail userData={userData} />
+      </Main>
+    </Wrapper>
   );
 };
 
@@ -44,6 +41,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 36px;
+  width: 730px;
   max-width: 730px;
   min-width: 327px;
   ${FadeInAnimation({ timing: "500ms", delay: "200ms" })}

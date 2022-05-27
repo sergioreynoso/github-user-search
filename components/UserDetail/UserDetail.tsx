@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import SearchContext from "../SearchContext";
 import styled from "styled-components";
 import Card from "../Card";
 import { ANIMATION_TIME, FONT_SIZE, QUERIES } from "../../utils/constants";
@@ -8,11 +7,9 @@ import { formatDate } from "../../utils/helpers";
 import Stats from "./Stats";
 import Meta from "./Meta";
 import { FadeInAnimation } from "../../utils/animations";
+import { GitHubUser } from "../../utils/types";
 
-export default function UserDetail() {
-  const appContenxt = useContext(SearchContext);
-  if (!appContenxt) return null;
-  const { userData } = appContenxt;
+export default function UserDetail({ userData }: { userData: GitHubUser }) {
   const {
     name,
     avatar_url,
