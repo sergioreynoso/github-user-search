@@ -34,7 +34,7 @@ Users should be able to:
 
 - Solution URL: [Solution](https://www.frontendmentor.io/solutions/responsive-layout-mobile-1st-scss-flexbox-grids-vanilla-js-vite-9jpPGX-7X)
 
-- Live Site URL: [Live Site](https://vibrant-shirley-9979e9.netlify.app/)
+- Live Site URL: [Live Site](https://github-user-search-pied.vercel.app/)
 
 ## My process
 
