@@ -8,11 +8,9 @@ import { GitHubUser } from "../../utils/types";
 import { getUserData } from "../../utils/api";
 import VisuallyHidden from "../VisuallyHidden";
 
-export default function SearchBar({
-  setUserData,
-}: {
-  setUserData: (data: GitHubUser) => void;
-}) {
+type tProps = { setUserData: (data: GitHubUser) => void };
+
+export default function SearchBar({ setUserData }: tProps) {
   const [inputValue, setInputValue] = useState("");
   const [isError, setIsError] = useState(false);
 
