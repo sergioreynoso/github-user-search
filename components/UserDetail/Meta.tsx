@@ -3,17 +3,19 @@ import styled from "styled-components";
 import { ANIMATION_TIME, QUERIES, ROUND_CORNERS } from "../../utils/constants";
 import Icons from "../Icons";
 
+interface UserMeta {
+  location: string;
+  twitterUsername: string | null;
+  blog: string;
+  company: string;
+}
+
 export default function Meta({
   location,
   twitterUsername,
   blog,
   company,
-}: {
-  location: string;
-  twitterUsername: string | null;
-  blog: string;
-  company: string;
-}) {
+}: UserMeta) {
   const validateItemLabel = (item: string | null): string => {
     return item ? item : "Not Available";
   };
