@@ -18,7 +18,7 @@ export default function SearchBar({ setUserData }: tProps) {
     setInputValue(e.currentTarget.value);
   };
 
-  const onSubmitHandler = (e: SyntheticEvent<HTMLFormElement>) => {
+  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!inputValue) return;
     fetchUserData(inputValue);
