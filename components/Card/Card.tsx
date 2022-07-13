@@ -12,7 +12,7 @@ export default function Card({
   return <Wrapper className={className}>{children}</Wrapper>;
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
   padding: 1.5rem;
   background-color: var(--clr-card-bg);
   border-radius: ${ROUND_CORNERS.large};
