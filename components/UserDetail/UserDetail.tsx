@@ -30,7 +30,7 @@ export default function UserDetail({ userData }: { userData: GitHubUser }) {
   return (
     <Wrapper>
       <AvatarWrapper key={avatar_url}>
-        <Image src={avatar_url} layout="fill" alt="Profile avatar" priority />
+        <Image src={avatar_url} layout="fill" alt="Profile avatar" />
       </AvatarWrapper>
       <TitleWrapper>
         <Name>{name}</Name>
