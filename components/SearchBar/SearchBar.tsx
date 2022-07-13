@@ -120,8 +120,9 @@ const Input = styled.input`
   }
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.span`
   position: absolute;
+  display: block;
   top: 1px;
   left: 10px;
   bottom: 0;
