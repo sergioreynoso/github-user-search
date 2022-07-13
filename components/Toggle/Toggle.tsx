@@ -25,7 +25,7 @@ export default function DarkModeToggle() {
     <ToggleButton
       onClick={onClickHandler}
       aria-pressed="false"
-      aria-describedby="dark mode"
+      aria-label="Dark mode toggle"
     >
       <Label>{theme === "light" ? "dark" : "light"}</Label>
       <IconWrapper>
