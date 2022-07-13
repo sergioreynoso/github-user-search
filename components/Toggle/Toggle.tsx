@@ -45,7 +45,8 @@ const Label = styled.span`
   transition: all ${ANIMATION_TIME.fast};
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.span`
+  display: block;
   position: relative;
   align-self: center;
   width: 20px;
