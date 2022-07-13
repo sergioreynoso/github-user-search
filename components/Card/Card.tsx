@@ -2,13 +2,12 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { ROUND_CORNERS, ANIMATION_TIME } from "../../utils/constants";
 
-export default function Card({
-  className,
-  children,
-}: {
+type CardProps = {
   className?: string;
   children: ReactNode;
-}) {
+};
+
+export default function Card({ className, children }: CardProps) {
   return <Wrapper className={className}>{children}</Wrapper>;
 }
 
